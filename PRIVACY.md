@@ -1,13 +1,12 @@
-# Smart Trader – privacy policy (draft)
+# Smart Trader – privacy policy
 
-Draft of 2026-10-06 for the browser extension. Items in angle brackets (`<…>`) are for the owner to fill in before
-publishing. The same text in three languages: [English](#english) · [Українська](#українська) · [Русский](#русский).
+Effective since 2026-10-06, for the browser extension. The same text in three languages: [English](#english) · [Українська](#українська) · [Русский](#русский).
 
 ---
 
 ## English
 
-**Effective date:** `<date of publishing>` · **Contact:** ggggggdev@gmail.com
+**Effective date:** 2026-10-06 · **Contact:** ggggggdev@gmail.com
 
 Smart Trader adds trading tools to Steam pages: trade offer summaries and item prices, faster accepting of the offers
 you choose, inventory and Community Market helpers, trade history summaries, partner reputation checks and desktop
@@ -74,14 +73,15 @@ like any website, sees your IP address, your browser's name and version (User-Ag
 
 | Service | What is sent | When |
 | --- | --- | --- |
-| keys.land price relay (`<relay host, set at build time>`) | only which price is wanted: `GET …/kl/v1/market/series?item=key` (or `ticket`, `gems`) `&range=24h`. Nothing about you or your account. | when prices of TF2 keys, tickets or gems are shown (at most once a minute) — only while KEYS.LAND prices are on in Smart Trader's settings (off by default); the relay itself is allowed from the start and the options can turn it off |
+| keys.land price relay (the host listed in the extension's permissions) | only which price is wanted: `GET …/kl/v1/market/series?item=key` (or `ticket`, `gems`) `&range=24h`. Nothing about you or your account. | when prices of TF2 keys, tickets or gems are shown (at most once a minute) — only while KEYS.LAND prices are on in Smart Trader's settings (off by default); the relay itself is allowed from the start and the options can turn it off |
 | backpack.tf (`backpack.tf`) | the public SteamID64 of the profile or trade partner you look at: `GET https://backpack.tf/api/IGetUsers/v3?steamid=<SteamID64>` | when you open a profile, a trade offer or the trade history |
 | SteamTrades (`www.steamtrades.com`) | the same SteamID64: `GET https://www.steamtrades.com/user/<SteamID64>` (the userscript version sends your SteamTrades cookies; the extension does not) | the same |
 | CSGO-Rep (`api.csgo-rep.com`) | the same SteamID64: `POST https://api.csgo-rep.com` with `{"id": <number>, "query": {"steam_id": "<SteamID64>"}}`; now and then `GET https://api.csgo-rep.com/config` (nothing about you) | the same |
 
-Results are kept on your computer for a few hours (section 2). The operators' own policies: keys.land relay:
-`<operator of the relay and its log retention>`; backpack.tf: `<policy address>`; SteamTrades: `<policy address>`; CSGO-Rep:
-`<policy address>`.
+Results are kept on your computer for a few hours (section 2). The keys.land price relay is run by the author of Smart
+Trader; it only forwards public price data from KEYS.LAND, an independent service whose data is used with its owner's
+permission. The relay keeps only ordinary server logs (the requested address and the time) for a short time and nothing
+about your account. backpack.tf, SteamTrades and CSGO-Rep each apply their own privacy policy, published on their sites.
 
 When you turn backpack.tf on, the extension also runs its tools on the backpack.tf pages you open (listing prices in
 trade offer links, backpack totals); before that it does not run there at all. On those pages only your settings, the
@@ -136,7 +136,7 @@ and the Steam logo are trademarks and/or registered trademarks of Valve Corporat
 
 ## Українська
 
-**Діє з:** `<дата публікації>` · **Контакт:** ggggggdev@gmail.com
+**Діє з:** 2026-10-06 · **Контакт:** ggggggdev@gmail.com
 
 Smart Trader додає інструменти для обміну на сторінки Steam: зведення пропозицій обміну й ціни предметів, швидше
 прийняття вибраних вами пропозицій, помічники для інвентарю й торговельного майданчика, підсумки історії обмінів,
@@ -207,14 +207,15 @@ Steam (`steamcommunity.com`, `store.steampowered.com`, `checkout.steampowered.co
 
 | Сервіс | Що надсилається | Коли |
 | --- | --- | --- |
-| Сервер цін keys.land (`<хост сервера, задається під час збирання>`) | лише те, яка ціна потрібна: `GET …/kl/v1/market/series?item=key` (або `ticket`, `gems`) `&range=24h`. Нічого про вас чи ваш обліковий запис. | коли показуються ціни ключів TF2, квитків чи самоцвітів (не частіше ніж раз на хвилину) — лише коли ціни KEYS.LAND увімкнені в налаштуваннях Smart Trader (типово вимкнені); сам сервер дозволений від початку, у параметрах його можна вимкнути |
+| Сервер цін keys.land (хост, зазначений у дозволах розширення) | лише те, яка ціна потрібна: `GET …/kl/v1/market/series?item=key` (або `ticket`, `gems`) `&range=24h`. Нічого про вас чи ваш обліковий запис. | коли показуються ціни ключів TF2, квитків чи самоцвітів (не частіше ніж раз на хвилину) — лише коли ціни KEYS.LAND увімкнені в налаштуваннях Smart Trader (типово вимкнені); сам сервер дозволений від початку, у параметрах його можна вимкнути |
 | backpack.tf (`backpack.tf`) | публічний SteamID64 профілю чи партнера з обміну, якого ви переглядаєте: `GET https://backpack.tf/api/IGetUsers/v3?steamid=<SteamID64>` | коли ви відкриваєте профіль, пропозицію обміну чи історію обмінів |
 | SteamTrades (`www.steamtrades.com`) | той самий SteamID64: `GET https://www.steamtrades.com/user/<SteamID64>` (версія-userscript надсилає ваші cookie SteamTrades; розширення — ні) | так само |
 | CSGO-Rep (`api.csgo-rep.com`) | той самий SteamID64: `POST https://api.csgo-rep.com` з `{"id": <число>, "query": {"steam_id": "<SteamID64>"}}`; час від часу `GET https://api.csgo-rep.com/config` (нічого про вас) | так само |
 
-Результати зберігаються на вашому комп’ютері кілька годин (розділ 2). Політики операторів: сервер keys.land:
-`<оператор сервера і строк зберігання журналів>`; backpack.tf: `<адреса політики>`; SteamTrades: `<адреса політики>`;
-CSGO-Rep: `<адреса політики>`.
+Результати зберігаються на вашому комп’ютері кілька годин (розділ 2). Сервер цін keys.land тримає автор Smart Trader;
+він лише пересилає публічні дані про ціни з KEYS.LAND — незалежного сервісу, дані якого використовуються з дозволу його
+власника. Сам сервер недовго зберігає лише звичайні журнали (запитану адресу й час) і нічого про ваш акаунт. backpack.tf,
+SteamTrades і CSGO-Rep застосовують власні політики конфіденційності, опубліковані на їхніх сайтах.
 
 Коли ви вмикаєте backpack.tf, розширення також додає свої інструменти на відкриті вами сторінки backpack.tf (ціни
 лотів у посиланнях на обмін, вартість рюкзака); доти воно там зовсім не працює. На цих сторінках сторінці передаються
@@ -269,7 +270,7 @@ Smart Trader — незалежний проєкт. Він не пов’яза�
 
 ## Русский
 
-**Действует с:** `<дата публикации>` · **Контакт:** ggggggdev@gmail.com
+**Действует с:** 2026-10-06 · **Контакт:** ggggggdev@gmail.com
 
 Smart Trader добавляет инструменты для обмена на страницы Steam: сводки предложений обмена и цены предметов, более
 быстрое принятие выбранных вами предложений, помощники для инвентаря и торговой площадки, итоги истории обменов,
@@ -337,14 +338,15 @@ Steam подробности ваших собственных значков (�
 
 | Сервис | Что отправляется | Когда |
 | --- | --- | --- |
-| Сервер цен keys.land (`<хост сервера, задаётся при сборке>`) | только то, какая цена нужна: `GET …/kl/v1/market/series?item=key` (или `ticket`, `gems`) `&range=24h`. Ничего о вас или вашей учётной записи. | когда показываются цены ключей TF2, билетов или самоцветов (не чаще раза в минуту) — только когда цены KEYS.LAND включены в настройках Smart Trader (по умолчанию выключены); сам сервер разрешён с самого начала, в параметрах его можно выключить |
+| Сервер цен keys.land (хост, указанный в разрешениях расширения) | только то, какая цена нужна: `GET …/kl/v1/market/series?item=key` (или `ticket`, `gems`) `&range=24h`. Ничего о вас или вашей учётной записи. | когда показываются цены ключей TF2, билетов или самоцветов (не чаще раза в минуту) — только когда цены KEYS.LAND включены в настройках Smart Trader (по умолчанию выключены); сам сервер разрешён с самого начала, в параметрах его можно выключить |
 | backpack.tf (`backpack.tf`) | публичный SteamID64 профиля или партнёра по обмену, которого вы просматриваете: `GET https://backpack.tf/api/IGetUsers/v3?steamid=<SteamID64>` | когда вы открываете профиль, предложение обмена или историю обменов |
 | SteamTrades (`www.steamtrades.com`) | тот же SteamID64: `GET https://www.steamtrades.com/user/<SteamID64>` (версия-userscript отправляет ваши cookie SteamTrades; расширение — нет) | так же |
 | CSGO-Rep (`api.csgo-rep.com`) | тот же SteamID64: `POST https://api.csgo-rep.com` с `{"id": <число>, "query": {"steam_id": "<SteamID64>"}}`; время от времени `GET https://api.csgo-rep.com/config` (ничего о вас) | так же |
 
-Результаты хранятся на вашем компьютере несколько часов (раздел 2). Политики операторов: сервер keys.land:
-`<оператор сервера и срок хранения журналов>`; backpack.tf: `<адрес политики>`; SteamTrades: `<адрес политики>`;
-CSGO-Rep: `<адрес политики>`.
+Результаты хранятся на вашем компьютере несколько часов (раздел 2). Сервер цен keys.land держит автор Smart Trader;
+он только пересылает публичные данные о ценах с KEYS.LAND — независимого сервиса, данные которого используются с
+разрешения его владельца. Сам сервер недолго хранит только обычные журналы (запрошенный адрес и время) и ничего о вашем
+аккаунте. backpack.tf, SteamTrades и CSGO-Rep применяют собственные политики конфиденциальности, опубликованные на их сайтах.
 
 Когда вы включаете backpack.tf, расширение также добавляет свои инструменты на открытые вами страницы backpack.tf
 (цены лотов в ссылках на обмен, стоимость рюкзака); до этого оно там вовсе не работает. На этих страницах странице
