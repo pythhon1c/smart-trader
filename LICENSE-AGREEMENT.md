@@ -1,12 +1,12 @@
 # Smart Trader License Agreement
 
-Version 2026-10-04. English, Українська, Русский: the same agreement in three languages (section 15 says which text prevails).
+Version 2026-10-10. English, Українська, Русский: the same agreement in three languages (section 15 says which text prevails).
 
 ## Smart Trader License Agreement
 
-*Version 2026-10-04*
+*Version 2026-10-10*
 
-This License Agreement (the “Agreement”) is between you and the author of Smart Trader (“we”, “us”). Please read it in full. By ticking “I have read and accept the License Agreement” and pressing Accept, you agree to it. If you do not agree, press Decline: Smart Trader then stays paused and does nothing on Steam’s pages.
+This License Agreement (the “Agreement”) is between you and the author of Smart Trader (“we”, “us”). Please read it in full. By ticking “I have read and accept the License Agreement” and pressing Accept, you agree to it. If you do not agree, press Decline: Smart Trader then stays paused — only its looks are set, nothing about you is read or sent — until you accept.
 
 ### 1. What this Agreement covers
 
@@ -32,9 +32,9 @@ Your use of Steam is governed by your own agreements with Valve, including the S
 
 ### 6. Automation needs a separate consent
 
-Some features act on your behalf without a click for each action. At present this is auto accept: while it is on and a Steam tab is open, it accepts incoming offers in which you give nothing (gift offers). Such features are off by default and work only after you give a separate, explicit consent (the “Allow automation” box). You can withdraw that consent at any time in Settings → License (in the extension: on its options page, section License); withdrawing turns automation off in every open tab.
+Some features act on your behalf without a click for each action. At present these are auto accept — while it is on and a Steam tab is open, it accepts incoming offers in which you give nothing (gift offers) — and auto-cancel, which cancels offers sent from your account but not from this browser (at most 5 tries an hour). Such features are off by default and work only after you give a separate, explicit consent (the “Allow automation” box). You can withdraw that consent at any time in Settings → License (in the extension: on its options page, section License); withdrawing turns automation off in every open tab.
 
-Auto accept never accepts an offer in which you give items or one with a trade hold, never declines or sends offers, and never confirms anything in the Steam Mobile Authenticator. You are responsible for the features you turn on and for what they do on your behalf, including the items you receive.
+Auto accept never accepts an offer in which you give items or one with a trade hold, never declines or sends offers, and never confirms anything in the Steam Mobile Authenticator. Auto-cancel never accepts, declines or sends an offer. You are responsible for the features you turn on and for what they do on your behalf, including the items you receive.
 
 ### 7. Money, prices and selling
 
@@ -42,11 +42,13 @@ Prices, fees, totals, price suggestions and comparisons shown by Smart Trader ar
 
 ### 8. Third-party services
 
-Optional services are run by others: KEYS.LAND (prices), backpack.tf, SteamTrades and CSGO-Rep (reputation and tools). They are off until you turn them on. When they are on, Smart Trader sends them only what the feature needs, such as a trade partner’s public SteamID64 or an item’s name. Their own terms and privacy policies apply, and we are not responsible for their availability, accuracy or conduct.
+Optional services are run by others, except the KEYS.LAND price relay, which we run: it forwards KEYS.LAND’s public prices of keys, tickets and gems and is on from the start; the KEYS.LAND tab’s switch (or the extension’s options) turns it off. Every other service is off until you turn it on (its box on Smart Trader’s first page or in its options, and the setting that uses it): marketdb.info (Community Market prices; the default source once allowed), pricempire (with your own API key, under its own terms), the price files of Market.CSGO, Waxpeer, LOOT.FARM and Lis-Skins, itempedia.tf (pictures of Unusual effects), and backpack.tf, SteamTrades and CSGO-Rep (reputation and tools). When one is used, Smart Trader sends it only what the feature needs, such as a trade partner’s public SteamID64, a game or an item’s name. Their own terms and privacy policies apply, and we are not responsible for their availability, accuracy or conduct.
+
+Links to other sites, such as SteamDB or a 3D viewer of CS2 items (skinflow.gg, csmarketcap.com or swap.gg), are ordinary links: a site opens only when you click, in a new tab; a 3D viewer receives only the item’s inspect link and may pass it on to its own services. It sees what any site you visit sees; its own terms apply.
 
 ### 9. Privacy
 
-Smart Trader has no analytics, advertising or tracking, and no server that collects your data. Its settings, caches and summaries are kept in your browser. The diagnostic log is off by default, stays on your device, records timings, counts and errors rather than profiles, and is shared only if you choose to send it to someone. Your acceptance of this Agreement is stored on your device only as its version, the time and your automation choice, with no account data. Details: the privacy policy (extension/PRIVACY.md, shipped with the extension).
+Smart Trader has no analytics, advertising or tracking, and no server that collects your data. Its settings, caches and summaries are kept in your browser. The diagnostic log is off by default, stays on your device, records timings, counts and errors rather than profiles (the downloaded file also names your browser, system, screen class and density, language, time zone, Smart Trader’s versions and first install date here, your settings — text ones by key only —, its tips’ state, an installation code), and is shared only if you choose to send it to someone. Your acceptance of this Agreement is stored on your device only as its version, the time and your automation choice, with no account data. Details: the privacy policy (extension/PRIVACY.md, shipped with the extension).
 
 ### 10. Updates and changes to this Agreement
 
@@ -93,9 +95,9 @@ Questions about this Agreement: ggggggdev@gmail.com.
 
 ## Ліцензійна угода Smart Trader
 
-*Версія 2026-10-04*
+*Версія 2026-10-10*
 
-Ця Ліцензійна угода («Угода») укладається між вами та автором Smart Trader («ми», «нас»). Прочитайте її повністю. Позначивши «Я прочитав(ла) і приймаю Ліцензійну угоду» та натиснувши «Прийняти», ви погоджуєтеся з нею. Якщо ви не згодні, натисніть «Відхилити»: тоді Smart Trader залишається призупиненим і нічого не робить на сторінках Steam.
+Ця Ліцензійна угода («Угода») укладається між вами та автором Smart Trader («ми», «нас»). Прочитайте її повністю. Позначивши «Я прочитав(ла) і приймаю Ліцензійну угоду» та натиснувши «Прийняти», ви погоджуєтеся з нею. Якщо ви не згодні, натисніть «Відхилити»: тоді Smart Trader залишається призупиненим — задано лише його вигляд, нічого про вас не читається й не надсилається, — доки ви не приймете Угоду.
 
 ### 1. Що охоплює ця Угода
 
@@ -121,9 +123,9 @@ Smart Trader — незалежний проєкт. Він не пов’яза�
 
 ### 6. Автоматизація потребує окремої згоди
 
-Деякі функції діють від вашого імені без натискання для кожної дії. Наразі це автоприйняття: поки воно ввімкнене й відкрита вкладка Steam, воно приймає вхідні пропозиції обміну, у яких ви нічого не віддаєте (подарунки). Такі функції вимкнені за замовчуванням і працюють лише після вашої окремої явної згоди (поле «Дозволити автоматизацію»). Ви можете будь-коли відкликати цю згоду в Налаштуваннях → Ліцензія (у розширенні — на сторінці його параметрів, розділ «Ліцензія»); відкликання вимикає автоматизацію в усіх відкритих вкладках.
+Деякі функції діють від вашого імені без натискання для кожної дії. Наразі це автоприйняття — поки воно ввімкнене й відкрита вкладка Steam, воно приймає вхідні пропозиції обміну, у яких ви нічого не віддаєте (подарунки), — та автоскасування, яке скасовує пропозиції обміну, надіслані з вашого облікового запису не з цього браузера (не більше 5 спроб на годину). Такі функції вимкнені за замовчуванням і працюють лише після вашої окремої явної згоди (поле «Дозволити автоматизацію»). Ви можете будь-коли відкликати цю згоду в Налаштуваннях → Ліцензія (у розширенні — на сторінці його параметрів, розділ «Ліцензія»); відкликання вимикає автоматизацію в усіх відкритих вкладках.
 
-Автоприйняття ніколи не приймає пропозицію, у якій ви віддаєте предмети, чи пропозицію з утриманням обміну, ніколи не відхиляє й не надсилає пропозицій і ніколи нічого не підтверджує в мобільному автентифікаторі Steam. Ви відповідаєте за функції, які вмикаєте, і за те, що вони роблять від вашого імені, зокрема за предмети, які ви отримуєте.
+Автоприйняття ніколи не приймає пропозицію, у якій ви віддаєте предмети, чи пропозицію з утриманням обміну, ніколи не відхиляє й не надсилає пропозицій і ніколи нічого не підтверджує в мобільному автентифікаторі Steam. Автоскасування ніколи не приймає, не відхиляє й не надсилає пропозицій. Ви відповідаєте за функції, які вмикаєте, і за те, що вони роблять від вашого імені, зокрема за предмети, які ви отримуєте.
 
 ### 7. Гроші, ціни й продаж
 
@@ -131,11 +133,13 @@ Smart Trader — незалежний проєкт. Він не пов’яза�
 
 ### 8. Сторонні сервіси
 
-Додаткові сервіси надають інші: KEYS.LAND (ціни), backpack.tf, SteamTrades і CSGO-Rep (репутація та інструменти). Вони вимкнені, доки ви їх не ввімкнете. Коли вони ввімкнені, Smart Trader надсилає їм лише те, що потрібно функції, наприклад публічний SteamID64 партнера з обміну чи назву предмета. Діють їхні власні умови й політики конфіденційності; ми не відповідаємо за їхню доступність, точність чи дії.
+Додаткові сервіси надають інші, крім ретранслятора цін KEYS.LAND, який тримаємо ми: він пересилає публічні ціни ключів, білетів і гемів KEYS.LAND і ввімкнений від початку; перемикач вкладки KEYS.LAND (або параметри розширення) його вимикає. Кожен інший сервіс вимкнений, доки ви його не ввімкнете (його прапорцем на першій сторінці Smart Trader чи в його параметрах і налаштуванням, яке його використовує): marketdb.info (ціни Ринку Steam; типове джерело, щойно дозволене), pricempire (з вашим власним API-ключем, на його власних умовах), файли цін маркетплейсів Market.CSGO, Waxpeer, LOOT.FARM і Lis-Skins, itempedia.tf (зображення ефектів Unusual), а також backpack.tf, SteamTrades і CSGO-Rep (репутація та інструменти). Коли сервіс використовується, Smart Trader надсилає йому лише те, що потрібно функції, наприклад публічний SteamID64 партнера з обміну, гру чи назву предмета. Діють їхні власні умови й політики конфіденційності; ми не відповідаємо за їхню доступність, точність чи дії.
+
+Посилання на інші сайти, як-от SteamDB чи 3D-переглядач предметів CS2 (skinflow.gg, csmarketcap.com або swap.gg), — звичайні посилання: сайт відкривається лише тоді, коли ви натискаєте його посилання, у новій вкладці, а 3D-переглядач отримує в адресі лише посилання огляду предмета (і може передати його своїм власним сервісам). Такий сайт бачить те саме, що й будь-який сайт, який ви відвідуєте, і діють його власні умови.
 
 ### 9. Конфіденційність
 
-Smart Trader не має аналітики, реклами чи стеження і не має сервера, який збирає ваші дані. Його налаштування, кеші й підсумки зберігаються у вашому браузері. Діагностичний журнал вимкнений за замовчуванням, залишається на вашому пристрої, записує час, кількості й помилки, а не профілі, і потрапляє до інших лише тоді, коли ви самі його надішлете. Прийняття цієї Угоди зберігається на вашому пристрої лише як її версія, час і ваш вибір щодо автоматизації, без даних облікового запису. Докладніше: політика конфіденційності (extension/PRIVACY.md, постачається з розширенням).
+Smart Trader не має аналітики, реклами чи стеження і не має сервера, який збирає ваші дані. Його налаштування, кеші й підсумки зберігаються у вашому браузері. Діагностичний журнал вимкнений за замовчуванням, залишається на вашому пристрої, записує час, кількості й помилки, а не профілі (файл, який ви завантажуєте, також називає ваш браузер і його версію, операційну систему, клас розміру екрана й щільність пікселів, мову й часовий пояс, версії Smart Trader на цьому встановленні й коли його встановлено вперше, ваші налаштування як є — текстові лише за ключем, — стан його підказок і випадковий код цього встановлення, який відрізняє його журнали), і потрапляє до інших лише тоді, коли ви самі його надішлете. Прийняття цієї Угоди зберігається на вашому пристрої лише як її версія, час і ваш вибір щодо автоматизації, без даних облікового запису. Докладніше: політика конфіденційності (extension/PRIVACY.md, постачається з розширенням).
 
 ### 10. Оновлення й зміни цієї Угоди
 
@@ -182,9 +186,9 @@ Smart Trader надається безкоштовно, «як є» і «як д
 
 ## Лицензионное соглашение Smart Trader
 
-*Версия 2026-10-04*
+*Версия 2026-10-10*
 
-Настоящее Лицензионное соглашение («Соглашение») заключается между вами и автором Smart Trader («мы», «нас»). Прочитайте его полностью. Отметив «Я прочитал(а) и принимаю Лицензионное соглашение» и нажав «Принять», вы соглашаетесь с ним. Если вы не согласны, нажмите «Отклонить»: тогда Smart Trader остаётся приостановленным и ничего не делает на страницах Steam.
+Настоящее Лицензионное соглашение («Соглашение») заключается между вами и автором Smart Trader («мы», «нас»). Прочитайте его полностью. Отметив «Я прочитал(а) и принимаю Лицензионное соглашение» и нажав «Принять», вы соглашаетесь с ним. Если вы не согласны, нажмите «Отклонить»: тогда Smart Trader остаётся приостановленным — задан лишь его внешний вид, ничего о вас не читается и не отправляется, — пока вы не примете Соглашение.
 
 ### 1. Что охватывает Соглашение
 
@@ -210,9 +214,9 @@ Smart Trader — независимый проект. Он не связан с 
 
 ### 6. Автоматизация требует отдельного согласия
 
-Некоторые функции действуют от вашего имени без нажатия для каждого действия. Сейчас это автопринятие: пока оно включено и открыта вкладка Steam, оно принимает входящие предложения обмена, в которых вы ничего не отдаёте (подарки). Такие функции выключены по умолчанию и работают только после вашего отдельного явного согласия (поле «Разрешить автоматизацию»). Вы можете в любой момент отозвать это согласие в Настройках → Лицензия (в расширении — на странице его параметров, раздел «Лицензия»); отзыв выключает автоматизацию во всех открытых вкладках.
+Некоторые функции действуют от вашего имени без нажатия для каждого действия. Сейчас это автопринятие — пока оно включено и открыта вкладка Steam, оно принимает входящие предложения обмена, в которых вы ничего не отдаёте (подарки), — и автоотмена, которая отменяет предложения обмена, отправленные с вашей учётной записи не из этого браузера (не более 5 попыток в час). Такие функции выключены по умолчанию и работают только после вашего отдельного явного согласия (поле «Разрешить автоматизацию»). Вы можете в любой момент отозвать это согласие в Настройках → Лицензия (в расширении — на странице его параметров, раздел «Лицензия»); отзыв выключает автоматизацию во всех открытых вкладках.
 
-Автопринятие никогда не принимает предложение, в котором вы отдаёте предметы, или предложение с удержанием обмена, никогда не отклоняет и не отправляет предложения и никогда ничего не подтверждает в мобильном аутентификаторе Steam. Вы отвечаете за функции, которые включаете, и за то, что они делают от вашего имени, в том числе за получаемые предметы.
+Автопринятие никогда не принимает предложение, в котором вы отдаёте предметы, или предложение с удержанием обмена, никогда не отклоняет и не отправляет предложения и никогда ничего не подтверждает в мобильном аутентификаторе Steam. Автоотмена никогда не принимает, не отклоняет и не отправляет предложений. Вы отвечаете за функции, которые включаете, и за то, что они делают от вашего имени, в том числе за получаемые предметы.
 
 ### 7. Деньги, цены и продажа
 
@@ -220,11 +224,13 @@ Smart Trader — независимый проект. Он не связан с 
 
 ### 8. Сторонние сервисы
 
-Дополнительные сервисы предоставляют другие: KEYS.LAND (цены), backpack.tf, SteamTrades и CSGO-Rep (репутация и инструменты). Они выключены, пока вы их не включите. Когда они включены, Smart Trader отправляет им только то, что нужно функции, например публичный SteamID64 партнёра по обмену или название предмета. Действуют их собственные условия и политики конфиденциальности; мы не отвечаем за их доступность, точность или действия.
+Дополнительные сервисы предоставляют другие, кроме ретранслятора цен KEYS.LAND, который держим мы: он пересылает публичные цены ключей, билетов и гемов KEYS.LAND и включён с самого начала; переключатель вкладки KEYS.LAND (или параметры расширения) его выключает. Каждый другой сервис выключен, пока вы его не включите (его флажком на первой странице Smart Trader или в его параметрах и настройкой, которая его использует): marketdb.info (цены Рынка Steam; источник по умолчанию, как только разрешён), pricempire (с вашим собственным API-ключом, на его собственных условиях), файлы цен маркетплейсов Market.CSGO, Waxpeer, LOOT.FARM и Lis-Skins, itempedia.tf (изображения эффектов Unusual), а также backpack.tf, SteamTrades и CSGO-Rep (репутация и инструменты). Когда сервис используется, Smart Trader отправляет ему только то, что нужно функции, например публичный SteamID64 партнёра по обмену, игру или название предмета. Действуют их собственные условия и политики конфиденциальности; мы не отвечаем за их доступность, точность или действия.
+
+Ссылки на другие сайты, например SteamDB или 3D-просмотрщик предметов CS2 (skinflow.gg, csmarketcap.com или swap.gg), — обычные ссылки: сайт открывается, только когда вы нажимаете его ссылку, в новой вкладке, а 3D-просмотрщик получает в адресе только ссылку осмотра предмета (и может передать её своим собственным сервисам). Такой сайт видит то же, что и любой посещаемый вами сайт, и действуют его собственные условия.
 
 ### 9. Конфиденциальность
 
-У Smart Trader нет аналитики, рекламы или слежки и нет сервера, который собирает ваши данные. Его настройки, кеши и итоги хранятся в вашем браузере. Диагностический журнал выключен по умолчанию, остаётся на вашем устройстве, записывает время, количества и ошибки, а не профили, и попадает к другим, только если вы сами его отправите. Принятие настоящего Соглашения хранится на вашем устройстве только как его версия, время и ваш выбор насчёт автоматизации, без данных учётной записи. Подробнее: политика конфиденциальности (extension/PRIVACY.md, поставляется с расширением).
+У Smart Trader нет аналитики, рекламы или слежки и нет сервера, который собирает ваши данные. Его настройки, кеши и итоги хранятся в вашем браузере. Диагностический журнал выключен по умолчанию, остаётся на вашем устройстве, записывает время, количества и ошибки, а не профили (файл, который вы скачиваете, также называет ваш браузер и его версию, операционную систему, класс размера экрана и плотность пикселей, язык и часовой пояс, версии Smart Trader на этой установке и когда она была сделана впервые, ваши настройки как есть — текстовые только по ключу, — состояние его подсказок и случайный код этой установки, отличающий его журналы), и попадает к другим, только если вы сами его отправите. Принятие настоящего Соглашения хранится на вашем устройстве только как его версия, время и ваш выбор насчёт автоматизации, без данных учётной записи. Подробнее: политика конфиденциальности (extension/PRIVACY.md, поставляется с расширением).
 
 ### 10. Обновления и изменения Соглашения
 
