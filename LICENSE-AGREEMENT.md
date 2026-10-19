@@ -1,12 +1,12 @@
 # Smart Trader License Agreement
 
-Version 2026-10-10. English, Українська, Русский: the same agreement in three languages (section 15 says which text prevails).
+Version 2026-10-17. English, Українська, Русский: the same agreement in three languages (section 15 says which text prevails).
 
 ## Smart Trader License Agreement
 
-*Version 2026-10-10*
+*Version 2026-10-17*
 
-This License Agreement (the “Agreement”) is between you and the author of Smart Trader (“we”, “us”). Please read it in full. By ticking “I have read and accept the License Agreement” and pressing Accept, you agree to it. If you do not agree, press Decline: Smart Trader then stays paused — only its looks are set, nothing about you is read or sent — until you accept.
+This License Agreement (the “Agreement”) is between you and the author of Smart Trader (“we”, “us”). Please read it in full. By ticking “I have read and accept the License Agreement” and pressing Accept, you agree to it. If you do not agree, press Decline: Smart Trader then stays paused — only its looks are set and its version is noted on your device, nothing about you is read or sent — until you accept.
 
 ### 1. What this Agreement covers
 
@@ -42,9 +42,9 @@ Prices, fees, totals, price suggestions and comparisons shown by Smart Trader ar
 
 ### 8. Third-party services
 
-Optional services are run by others, except the KEYS.LAND price relay, which we run: it forwards KEYS.LAND’s public prices of keys, tickets and gems and is on from the start; the KEYS.LAND tab’s switch (or the extension’s options) turns it off. Every other service is off until you turn it on (its box on Smart Trader’s first page or in its options, and the setting that uses it): marketdb.info (Community Market prices; the default source once allowed), pricempire (with your own API key, under its own terms), the price files of Market.CSGO, Waxpeer, LOOT.FARM and Lis-Skins, itempedia.tf (pictures of Unusual effects), and backpack.tf, SteamTrades and CSGO-Rep (reputation and tools). When one is used, Smart Trader sends it only what the feature needs, such as a trade partner’s public SteamID64, a game or an item’s name. Their own terms and privacy policies apply, and we are not responsible for their availability, accuracy or conduct.
+Optional services are run by others, except the KEYS.LAND price relay, which we run: it forwards KEYS.LAND’s public prices of keys, tickets and gems and is on from the start; the KEYS.LAND tab’s switch (or the extension’s options) turns it off. Every other service is off until you turn it on: marketdb.info (Community Market prices; the default source once allowed), pricempire (with your own API key, under its own terms), steamapis.com (big inventories with your own API key, under its own terms; only when you choose it as their source), the price files of Market.CSGO, Waxpeer, LOOT.FARM and Lis-Skins, KEYS.LAND’s Telegram channel (a price fallback), and backpack.tf, SteamTrades and CSGO-Rep (reputation and tools) — in the extension all of them by one box, “Third-party services and sites” (unticked until you tick it; unticking stops them all) — and itempedia.tf (pictures of Unusual effects) by its setting. Each is asked only while its setting uses it. A price service is asked only while your price settings use it: with price presets (several services in order; on by default), only while it is in the active preset and an item reaches it, the ones above it having no price of that item (the one exception: marketdb.info’s exchange rates are also asked while a marketplace is in the active preset, to show its prices in your wallet’s currency). When one is used, Smart Trader sends it only what the feature needs, such as a trade partner’s public SteamID64, a game or an item’s name. Their own terms and privacy policies apply, and we are not responsible for their availability, accuracy or conduct.
 
-Links to other sites, such as SteamDB or a 3D viewer of CS2 items (skinflow.gg, csmarketcap.com or swap.gg), are ordinary links: a site opens only when you click, in a new tab; a 3D viewer receives only the item’s inspect link and may pass it on to its own services. It sees what any site you visit sees; its own terms apply.
+Other sites, such as SteamDB, open only when you click their link. A 3D viewer of CS2 items (3dview.cs2inspects.com, shown in a Smart Trader window; csmarketcap.com or swap.gg) opens only when you click 3D, receives only the item’s inspect link and may pass it on to its own services. Such a site sees what any site you visit sees; its own terms apply.
 
 ### 9. Privacy
 
@@ -95,9 +95,9 @@ Questions about this Agreement: ggggggdev@gmail.com.
 
 ## Ліцензійна угода Smart Trader
 
-*Версія 2026-10-10*
+*Версія 2026-10-17*
 
-Ця Ліцензійна угода («Угода») укладається між вами та автором Smart Trader («ми», «нас»). Прочитайте її повністю. Позначивши «Я прочитав(ла) і приймаю Ліцензійну угоду» та натиснувши «Прийняти», ви погоджуєтеся з нею. Якщо ви не згодні, натисніть «Відхилити»: тоді Smart Trader залишається призупиненим — задано лише його вигляд, нічого про вас не читається й не надсилається, — доки ви не приймете Угоду.
+Ця Ліцензійна угода («Угода») укладається між вами та автором Smart Trader («ми», «нас»). Прочитайте її повністю. Позначивши «Я прочитав(ла) і приймаю Ліцензійну угоду» та натиснувши «Прийняти», ви погоджуєтеся з нею. Якщо ви не згодні, натисніть «Відхилити»: тоді Smart Trader залишається призупиненим — задано лише його вигляд і на вашому пристрої позначено його версію, нічого про вас не читається й не надсилається, — доки ви не приймете Угоду.
 
 ### 1. Що охоплює ця Угода
 
@@ -133,9 +133,9 @@ Smart Trader — незалежний проєкт. Він не пов’яза�
 
 ### 8. Сторонні сервіси
 
-Додаткові сервіси надають інші, крім ретранслятора цін KEYS.LAND, який тримаємо ми: він пересилає публічні ціни ключів, білетів і гемів KEYS.LAND і ввімкнений від початку; перемикач вкладки KEYS.LAND (або параметри розширення) його вимикає. Кожен інший сервіс вимкнений, доки ви його не ввімкнете (його прапорцем на першій сторінці Smart Trader чи в його параметрах і налаштуванням, яке його використовує): marketdb.info (ціни Ринку Steam; типове джерело, щойно дозволене), pricempire (з вашим власним API-ключем, на його власних умовах), файли цін маркетплейсів Market.CSGO, Waxpeer, LOOT.FARM і Lis-Skins, itempedia.tf (зображення ефектів Unusual), а також backpack.tf, SteamTrades і CSGO-Rep (репутація та інструменти). Коли сервіс використовується, Smart Trader надсилає йому лише те, що потрібно функції, наприклад публічний SteamID64 партнера з обміну, гру чи назву предмета. Діють їхні власні умови й політики конфіденційності; ми не відповідаємо за їхню доступність, точність чи дії.
+Додаткові сервіси надають інші, крім ретранслятора цін KEYS.LAND, який тримаємо ми: він пересилає публічні ціни ключів, білетів і гемів KEYS.LAND і ввімкнений від початку; перемикач вкладки KEYS.LAND (або параметри розширення) його вимикає. Кожен інший сервіс вимкнений, доки ви його не ввімкнете: marketdb.info (ціни Ринку Steam; типове джерело, щойно дозволене), pricempire (з вашим власним API-ключем, на його власних умовах), steamapis.com (великі інвентарі з вашим власним API-ключем, на його власних умовах; лише коли ви виберете його їхнім джерелом), файли цін маркетплейсів Market.CSGO, Waxpeer, LOOT.FARM і Lis-Skins, публічний Telegram-канал KEYS.LAND (резерв його цін), а також backpack.tf, SteamTrades і CSGO-Rep (репутація та інструменти) — у розширенні браузера всі вони разом однією галочкою «Сторонні сервіси й сайти» (не позначеною, доки ви її не позначите — на першій сторінці Smart Trader чи в його параметрах; якщо її зняти, зупиняються всі), — та itempedia.tf (зображення ефектів Unusual) його налаштуванням. До кожного з них звертаються лише тоді, коли ввімкнене налаштування, яке його використовує. Сервіс цін питають лише тоді, коли його використовують ваші налаштування цін: з пресетами цін (кілька сервісів по черзі; типово ввімкнені) — лише поки він є в активному пресеті й до нього доходить предмет, бо ті, що вище, не мають його ціни (єдиний виняток: курси валют marketdb.info питають і тоді, коли в активному пресеті є маркетплейс, щоб показати його ціни у валюті вашого гаманця). Коли сервіс використовується, Smart Trader надсилає йому лише те, що потрібно функції, наприклад публічний SteamID64 партнера з обміну, гру чи назву предмета. Діють їхні власні умови й політики конфіденційності; ми не відповідаємо за їхню доступність, точність чи дії.
 
-Посилання на інші сайти, як-от SteamDB чи 3D-переглядач предметів CS2 (skinflow.gg, csmarketcap.com або swap.gg), — звичайні посилання: сайт відкривається лише тоді, коли ви натискаєте його посилання, у новій вкладці, а 3D-переглядач отримує в адресі лише посилання огляду предмета (і може передати його своїм власним сервісам). Такий сайт бачить те саме, що й будь-який сайт, який ви відвідуєте, і діють його власні умови.
+Інші сайти, як-от SteamDB, відкриваються лише тоді, коли ви натискаєте їхнє посилання. 3D-переглядач предметів CS2 (3dview.cs2inspects.com, показаний у вікні Smart Trader; csmarketcap.com або swap.gg) відкривається лише тоді, коли ви натискаєте «3D», отримує лише посилання огляду предмета й може передати його своїм власним сервісам. Такий сайт бачить те саме, що й будь-який сайт, який ви відвідуєте, і діють його власні умови.
 
 ### 9. Конфіденційність
 
@@ -186,9 +186,9 @@ Smart Trader надається безкоштовно, «як є» і «як д
 
 ## Лицензионное соглашение Smart Trader
 
-*Версия 2026-10-10*
+*Версия 2026-10-17*
 
-Настоящее Лицензионное соглашение («Соглашение») заключается между вами и автором Smart Trader («мы», «нас»). Прочитайте его полностью. Отметив «Я прочитал(а) и принимаю Лицензионное соглашение» и нажав «Принять», вы соглашаетесь с ним. Если вы не согласны, нажмите «Отклонить»: тогда Smart Trader остаётся приостановленным — задан лишь его внешний вид, ничего о вас не читается и не отправляется, — пока вы не примете Соглашение.
+Настоящее Лицензионное соглашение («Соглашение») заключается между вами и автором Smart Trader («мы», «нас»). Прочитайте его полностью. Отметив «Я прочитал(а) и принимаю Лицензионное соглашение» и нажав «Принять», вы соглашаетесь с ним. Если вы не согласны, нажмите «Отклонить»: тогда Smart Trader остаётся приостановленным — задан лишь его внешний вид и на вашем устройстве отмечена его версия, ничего о вас не читается и не отправляется, — пока вы не примете Соглашение.
 
 ### 1. Что охватывает Соглашение
 
@@ -224,9 +224,9 @@ Smart Trader — независимый проект. Он не связан с 
 
 ### 8. Сторонние сервисы
 
-Дополнительные сервисы предоставляют другие, кроме ретранслятора цен KEYS.LAND, который держим мы: он пересылает публичные цены ключей, билетов и гемов KEYS.LAND и включён с самого начала; переключатель вкладки KEYS.LAND (или параметры расширения) его выключает. Каждый другой сервис выключен, пока вы его не включите (его флажком на первой странице Smart Trader или в его параметрах и настройкой, которая его использует): marketdb.info (цены Рынка Steam; источник по умолчанию, как только разрешён), pricempire (с вашим собственным API-ключом, на его собственных условиях), файлы цен маркетплейсов Market.CSGO, Waxpeer, LOOT.FARM и Lis-Skins, itempedia.tf (изображения эффектов Unusual), а также backpack.tf, SteamTrades и CSGO-Rep (репутация и инструменты). Когда сервис используется, Smart Trader отправляет ему только то, что нужно функции, например публичный SteamID64 партнёра по обмену, игру или название предмета. Действуют их собственные условия и политики конфиденциальности; мы не отвечаем за их доступность, точность или действия.
+Дополнительные сервисы предоставляют другие, кроме ретранслятора цен KEYS.LAND, который держим мы: он пересылает публичные цены ключей, билетов и гемов KEYS.LAND и включён с самого начала; переключатель вкладки KEYS.LAND (или параметры расширения) его выключает. Каждый другой сервис выключен, пока вы его не включите: marketdb.info (цены Рынка Steam; источник по умолчанию, как только разрешён), pricempire (с вашим собственным API-ключом, на его собственных условиях), steamapis.com (большие инвентари с вашим собственным API-ключом, на его собственных условиях; только когда вы выберете его их источником), файлы цен маркетплейсов Market.CSGO, Waxpeer, LOOT.FARM и Lis-Skins, публичный Telegram-канал KEYS.LAND (резерв его цен), а также backpack.tf, SteamTrades и CSGO-Rep (репутация и инструменты) — в расширении браузера все они вместе одним флажком «Сторонние сервисы и сайты» (не отмеченным, пока вы его не отметите — на первой странице Smart Trader или в его параметрах; если его снять, останавливаются все), — и itempedia.tf (изображения эффектов Unusual) его настройкой. К каждому из них обращаются, только когда включена настройка, которая его использует. Сервис цен спрашивается, только когда его используют ваши настройки цен: с пресетами цен (несколько сервисов по очереди; по умолчанию включены) — только пока он есть в активном пресете и до него доходит предмет, потому что у стоящих выше нет его цены (единственное исключение: курсы валют marketdb.info спрашиваются и тогда, когда в активном пресете есть маркетплейс, чтобы показать его цены в валюте вашего кошелька). Когда сервис используется, Smart Trader отправляет ему только то, что нужно функции, например публичный SteamID64 партнёра по обмену, игру или название предмета. Действуют их собственные условия и политики конфиденциальности; мы не отвечаем за их доступность, точность или действия.
 
-Ссылки на другие сайты, например SteamDB или 3D-просмотрщик предметов CS2 (skinflow.gg, csmarketcap.com или swap.gg), — обычные ссылки: сайт открывается, только когда вы нажимаете его ссылку, в новой вкладке, а 3D-просмотрщик получает в адресе только ссылку осмотра предмета (и может передать её своим собственным сервисам). Такой сайт видит то же, что и любой посещаемый вами сайт, и действуют его собственные условия.
+Другие сайты, например SteamDB, открываются, только когда вы нажимаете их ссылку. 3D-просмотрщик предметов CS2 (3dview.cs2inspects.com, показанный в окне Smart Trader; csmarketcap.com или swap.gg) открывается, только когда вы нажимаете «3D», получает только ссылку осмотра предмета и может передать её своим собственным сервисам. Такой сайт видит то же, что и любой посещаемый вами сайт, и действуют его собственные условия.
 
 ### 9. Конфиденциальность
 
