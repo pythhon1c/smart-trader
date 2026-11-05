@@ -1,12 +1,12 @@
 # Smart Trader – privacy policy
 
-Effective since 2026-10-25, for the browser extension. The same text in three languages: [English](#english) · [Українська](#українська) · [Русский](#русский).
+Effective since 2026-10-31, for the browser extension. The same text in three languages: [English](#english) · [Українська](#українська) · [Русский](#русский).
 
 ---
 
 ## English
 
-**Effective date:** 2026-10-25 · **Contact:** ggggggdev@gmail.com
+**Effective date:** 2026-10-31 · **Contact:** ggggggdev@gmail.com
 
 Smart Trader adds trading tools to Steam pages: trade offer summaries and item prices, faster accepting of the offers
 you choose, inventory and Community Market helpers, trade history summaries, partner reputation checks, phishing and
@@ -15,8 +15,9 @@ how to delete it. It matches the extension's code; if the code changes what it d
 in-extension notice change with it, and the extension asks for your agreement again before doing anything.
 
 ### 1. Nothing happens before you agree
-After installation the extension shows a data notice. Until you press "I agree", it does nothing on Steam pages: it
-reads no page data, stores nothing and makes no requests.
+After installation the extension shows a data notice. Until you press "I agree", nothing runs on Steam pages and no
+request is sent; only the installation's own service state is stored (which optional services are on, diagnostic
+counters), with no personal data.
 
 ### 2. Data kept on your computer
 Stored in your browser on this computer — in the extension's storage (`chrome.storage.local`) and, since 1.21.0, the
@@ -40,6 +41,9 @@ bigger caches in the Steam sites' own IndexedDB (see after this list) — never 
   signed in on this browser never sees them), and your account level and XP; another profile's badge levels are kept
   only while its page is open, never stored;
 - the choices you made in the extension's options (optional services, sound);
+- whether the tools on backpack.tf's pages may run: one yes / no that Smart Trader's code on Steam's pages copies
+  from its settings ("backpack.tf pages" and the game switch "Team Fortress 2"), so that the extension's background
+  part loads those tools on backpack.tf only while both are on;
 - your pricempire API key, if you set one on the extension's options page (never on a website; since 1.21.9, before in
   Smart Trader's settings): kept in the extension's own storage apart from the settings (its own database, which no web
   page and no part of the extension running in a page can read), never handed to Steam's pages, sent only to pricempire
@@ -48,7 +52,7 @@ bigger caches in the Steam sites' own IndexedDB (see after this list) — never 
   (section 5) by the extension's background part; and, on this browser only, how many requests went through it (this
   month, today) and their usual time;
 - (since 1.12.0) what the Phishing and scam protection (its own tab in Smart Trader's settings; since 1.19.2 an
-  experimental feature, off by default: nothing in this item is read or kept until you turn the tab on) needs to
+  experimental feature, off by default: nothing in this item is read or kept until you turn one of its checks on; since 1.22.0 each check is its own switch) needs to
   notice a change, as one-way keyed hashes only (fingerprints made on this computer with a random key of this
   installation; the data cannot be read back from them): the sessions and devices of your account's authorized devices
   list and your account's e-mail, phone and Steam Guard lines; the trade offers sent from this browser (15 days at
@@ -62,7 +66,7 @@ bigger caches in the Steam sites' own IndexedDB (see after this list) — never 
   a check. The words of an open security alert (a device's name and place, a trade partner's SteamID and nickname, the
   ids of the offers it is about) are kept only in that alert, until you answer or close it, for 24 hours at most; a chat
   impostor alert keeps as its words the two nicknames it compared and the chat partner's SteamID, the same way. With
-  the Trade offers tab off, the protection keeps the background offer watch running for its trade check, with that
+  the offer watch off, the protection keeps the background offer watch running for its trade check, with that
   watch's usual records: your account's SteamID with its offer counts, and the ids of the accepted sent offers it has
   read. The web chat's friends list and its open one-to-one chats (names, the names you gave your friends, avatars; group chats
   never) are read on your computer while the chat page is open and are not stored beyond the words of an open alert
@@ -82,6 +86,23 @@ bigger caches in the Steam sites' own IndexedDB (see after this list) — never 
 - (since 1.21.23) for the blinking button in Steam's header, per account under its SteamID: the ids of your sent trade
   offers that await your confirmation in the Steam Mobile app or by e-mail (100 at most, each 15 days at most) and the
   times of the offers sent from this browser in the last hour (20 at most); removed while that button's setting is off;
+- (since 1.22.0) for the item counts in Steam's header, per account under its SteamID (three accounts at most): besides
+  each inventory's count and when it was read, the trades on hold whose items those counts wait for (the offer's id,
+  when Steam ends the hold and which of your inventories — game and context numbers — its items come into; 50 at most,
+  each until a day after its hold ends) and the time of the newest trade seen on your own trade history or offers
+  pages — counts, ids and times only, no item names;
+- (since 1.22.0) Quick accept's pace: how many milliseconds per item Steam took in the clean accepts of 20 items or
+  more in this browser (the last 10 per game and of all games), for its countdown and its longer waits while Steam is
+  slow — numbers only, no offer and no account;
+- (since 1.22.0) when the sales notifications of the Notifications tab are on ("Sales on the Steam Market", off unless
+  you turn them on), one record for the browser's account, under its SteamID (a different account signed in starts it
+  over, telling nothing of the one before): the newest sales of your own Steam Market listings this browser has seen and
+  not told you of yet (the item's market name, what the buyer paid and what you received with Steam's id of their
+  currency, the sale's time — for the newest 12; for older ones only their count and the totals per currency, with the
+  oldest one's time), the time of the newest event of your market history (a listing created or cancelled, a purchase,
+  a sale) with Steam's listing and purchase ids of that second's sales only (to count each sale once), and the times of
+  the last read of your market history and of the last notification — for the one notification per period; nothing
+  about the buyer; turning the notifications off leaves it as it is, "Delete all Smart Trader data" deletes it;
 - (since 1.16.1) how many trades you had with each trade partner and the days of the first and last one, kept as
   one-way keyed hashes of the partner's SteamID with counts and days only (no names, no items), per account (five at
   most, 2,000 partners each), together with keyed hashes of the newest 4,000 trades (of the offer's id, or of the
@@ -91,7 +112,10 @@ bigger caches in the Steam sites' own IndexedDB (see after this list) — never 
   partner not in it. Nothing is sent anywhere; "Forget partner history" (Smart Trader's settings → Phishing and scam
   protection) deletes it;
 - your answer to the data notice and your acceptance of the License Agreement: only its version, the time and your
-  choice about automation (auto accept, auto-cancel), with no account data.
+  choice about automation (auto accept, auto-cancel), with no account data; (since 1.22.0) the extension's options page
+  (Overview) shows them in a diagnostic line under the data notice with the state of the optional services and the
+  extension's id, together with counts kept only in the browser's memory until it closes: how many times the notice
+  was shown since the browser started and why, and how many reads of the extension's storage failed.
 
 Since 1.21.0 the bigger of these records are not in the extension's storage but in the Steam sites' own IndexedDB in
 your browser (a database named `ct-cache` of steamcommunity.com, and of store.steampowered.com when the store's pages
@@ -110,8 +134,10 @@ the extension's options page deletes this database too, with Smart Trader's othe
 A few page features also keep small values in the Steam site's own storage in your browser (`localStorage` and
 IndexedDB of steamcommunity.com or store.steampowered.com, for example the market price caches of the selling tools,
 and the price lists of the price sources you turned on: item names with their prices and counts, nothing about you;
+since 1.22.0 also one list of CS2 prices (the Steam Market and five marketplaces) that the keys.land relay hands over from cs2.sh, kept 15 minutes by default ("cs2.sh list: ask again after" in the CS2 tab), item names with prices and counts and nothing about you, deleted by "Clear" in Price providers; also the marketplace ids of CS2 items (Buff, Youpin, C5GAME) for the links in the item card, one file from the same relay kept 24 hours, nothing about you, deleted by the same "Clear";
 since 1.12.1, while a blur for streams is on, which of the three is on — the wallet, names, avatars — so that it holds
-from a page's first frame), as Steam's pages do themselves. Since 1.21.24 "Delete all Smart Trader data" deletes these
+from a page's first frame; since 1.22.0, which settings tabs' "Advanced settings" block you left open), as Steam's
+pages do themselves. Since 1.21.24 "Delete all Smart Trader data" deletes these
 IndexedDB databases as well (section 8); the few `localStorage` values stay until you clear that site's data in the
 browser. Two settings also write one of Steam's own preference cookies, as Steam's own buttons do: "Load Steam's
 classic market pages instead of its Market Beta" (Selling & market; on by default for new installations since 1.21.18)
@@ -135,7 +161,10 @@ The tools read the Steam pages you open and ask Steam for more of the same (more
 offer states) with your Steam session, as the page would. (Since 1.21.23) On a Steam page in a language other than English they also
 ask Steam for the English description of a TF2 or CS2 item class whose lines they cannot read in that language (at
 most 200 a page visit, in the background; kept with the item descriptions of section 2 and asked again after 30
-days); this goes only to Steam. The card set tools read your own badges' details from Steam
+days); this goes only to Steam. (Since 1.22.0) While the sales notifications of the Notifications tab are on, one tab
+of the browser reads your own Steam Market history (`steamcommunity.com/market/myhistory/`) with your Steam session once
+per the period you chose (15 minutes by default), for the newest sales of your own listings; nothing is sent to anyone.
+The card set tools read your own badges' details from Steam
 (the card sets, your levels and XP), and a public profile's badge pages only when you ask for that profile's levels.
 Crafting badges from card sets is a change on your account: it is sent to Steam (one craft at a time) only after you
 have seen the plan — the games, the sets and the XP — and confirmed it; it can be stopped at any time. The other
@@ -155,7 +184,7 @@ protection" is on (on by default). The protection's checks only read, with your 
 the Security & Devices page (`store.steampowered.com/account/authorizeddevices`) for the e-mail, phone and Steam Guard
 lines (read from an open `store.steampowered.com` tab; while none is open, these lines wait); your sent offers, with
 the background offer watch's own requests (its counts; its sent list when those counts move and at most every 5
-minutes while one of your sent offers is waiting — with the Trade offers tab or its notification of accepted offers
+minutes while one of your sent offers is waiting — with the offer watch or its notification of accepted offers
 off, these list reads are made for this check; for an alert about such an offer, one read of its partner's public
 Steam profile — and, on a phishing sign, of the cancelled offer's partner — for the nickname the alert shows); your own
 inventory from Steam's server, to compare with what the inventory page shows — when you open your
@@ -203,7 +232,7 @@ request per trade for its items, three at most).
 ### 5. Optional services
 The optional third-party services and sites are all under one box (since 1.21.24, as from 1.18.0 to 1.21.22; in 1.21.23 the sites for prices and pictures had no box and were asked of the browser by "I agree", and a box of their own turned on the services that receive Steam IDs): "Use the optional third-party services and sites" on the page shown before Smart Trader starts, "Allow the optional services and sites" in the extension's options (the same box).
 Under it: the price sources (since 2026-10-09) marketdb.info, pricempire and the marketplaces' public price files (Market.CSGO and its TF2, Dota 2 and Rust sites, Waxpeer, LOOT.FARM, Lis-Skins), the KEYS.LAND Telegram channel and (since 1.21.23) itempedia.tf's pictures of TF2 Unusual effects, which receive nothing about you or your items; the three reputation sites (backpack.tf, SteamTrades, CSGO-Rep), which receive the public SteamID64 of a trade partner you look at; and (since 1.18.0) steamapis.com, which receives your own key and the SteamID64 of each inventory loaded through it.
-The box is empty on the first run, and "I agree to the License Agreement and the data notice" then accepts the agreement and the data notice only: nothing is asked of the browser and none of these services runs. Ticked, the same button also asks the browser, in one prompt, to allow all of their sites, and the box counts as ticked only once the browser holds every one of them; if you decline that prompt, your agreement is still recorded and these services stay off until you tick the box in the options. When the page asks again after an update, the box is ticked as you left it, while the browser still allows every one of those sites.
+The box is empty on the first run, and "I agree to the License Agreement and the data notice" then accepts the agreement and the data notice only: nothing is asked of the browser and none of these services runs. Ticked, the same button also asks the browser, in one prompt, to allow all of their sites, and the box counts as ticked only once the browser holds every one of them; if you decline that prompt, your agreement is still recorded and these services stay off until you tick the box in the options. When the page asks again after an update, the box is ticked as you left it while the browser still allows every one of those sites, or when the browser cannot tell (then "I agree", with the box left as it is, keeps your services as they were: nothing is asked, turned off or given back); when one of those sites is no longer allowed, the box is empty and a line under it says that you had it ticked — tick it again and the same button asks the browser for them.
 Unticking it — on that page when it asks again, or in the options — turns every one of them off and gives their sites' access back to the browser; the browser's own site access settings for the extension, or "Delete all Smart Trader data", take a site's permission back as well.
 While the box is not ticked, prices come from the Steam Market only, with no Unusual effect pictures, no marketplace prices, no KEYS.LAND fallback and no partner reputation from these sites; Smart Trader's settings on Steam show a red notice with a button to the options, and its button in Steam's header blinks red.
 Smart Trader's default settings use marketdb.info prices and Waxpeer's price file (the factory Preset 1), KEYS.LAND's Telegram fallback (when the keys.land relay does not answer), the pictures of TF2 Unusual effects from itempedia.tf and the reputation sites, so ticking the box starts them right away: the partner reputation from backpack.tf (with its tools on backpack.tf pages), SteamTrades (with your steamtrades.com cookies) and CSGO-Rep.
@@ -226,7 +255,7 @@ extension's own database on this computer apart from the settings, and the exten
 `api.pricempire.com`, as the `Authorization` header of its requests, never in an address and never to any other host;
 it is never handed to a web page, Steam's included, and never written to the diagnostic log. The keys.land price relay is allowed from the start (its host is installed with the
 extension), and Smart Trader asks it only while its prices are on in Smart Trader's settings (KEYS.LAND → "Use
-KEYS.LAND prices", on from the start since 1.12.2; the KEYS.LAND tab's switch turns it off; since 1.12.4 the one switch
+KEYS.LAND prices", on from the start since 1.12.2; the KEYS.LAND prices switch turns it off; since 1.12.4 the one switch
 of those prices with any price source, a marketplace included), or, for its Steam conversion figures only, while a
 marketplace is the price source and the items it does not price are valued less the automatic cash-out fee, or while
 Steam Market or marketdb.info prices are shown as cash ("Cash after the cash-out fee", on by default; always while
@@ -254,7 +283,7 @@ look up (including other people's), for up to 2 years.
 
 | Service | What is sent | When |
 | --- | --- | --- |
-| keys.land price relay (the host listed in the extension's permissions) | only which price is wanted: `GET …/kl/v1/market/series?item=key` (or `ticket`, `gems`) `&range=24h`; and the Steam conversion figures of keys, tickets and gems: `GET …/kl/v1/steam/convert` (no parameter). Nothing about you or your account. | when prices of TF2 keys, tickets or gems are shown (at most once a minute) — only while KEYS.LAND prices are on in Smart Trader's settings (on from the start since 1.12.2; the KEYS.LAND tab's switch turns them off; with any price source, a marketplace included); the conversion figures only while a marketplace is the price source and the items it does not price are valued less the automatic cash-out fee, or while Steam Market or marketdb.info prices are shown as cash (on by default; always while KEYS.LAND is on) (at most every few minutes); the relay itself is allowed from the start and the options can turn it off |
+| keys.land price relay (the host listed in the extension's permissions) | only which price is wanted: `GET …/kl/v1/market/series?item=key` (or `ticket`, `gems`) `&range=24h`; and the Steam conversion figures of keys, tickets and gems: `GET …/kl/v1/steam/convert` (no parameter). Nothing about you or your account. (Since 1.22.0) The CS2 price lists our server collects from cs2.sh (the Steam Market and five marketplaces: BUFF, Youpin, CSFloat, Skinport, C5Game): `GET …/v1/cs2sh/latest?sources=<the sources>` sends only the list of sources; nothing about you or your items, never an item's name. Once a day also the marketplace ids of CS2 items for the links in the item card (`GET …/v1/cs2sh/ids`, no parameter): nothing about you. | when prices of TF2 keys, tickets or gems are shown (at most once a minute) — only while KEYS.LAND prices are on in Smart Trader's settings (on from the start since 1.12.2; the KEYS.LAND prices switch turns them off; with any price source, a marketplace included); the conversion figures only while a marketplace is the price source and the items it does not price are valued less the automatic cash-out fee, or while Steam Market or marketdb.info prices are shown as cash (on by default; always while KEYS.LAND is on) (at most every few minutes); (since 1.22.0) the CS2 price list: one list, kept 15 minutes, when a CS2 item needs a price from a cs2.sh member of your active preset ("Steam Market (cs2.sh)", "Marketplaces (cs2.sh)") or the CS2 tab's prices on the marketplaces are on and a page shows CS2 items; the ids file once a day under the same condition (kept 24 hours); the relay itself is allowed from the start and the options can turn it off |
 | Telegram (`t.me`), the KEYS.LAND channel | only the request for the channel's public page: `GET https://t.me/s/keysland`. Nothing about you or your items, no cookies. Only the prices of keys, tickets and gems of its latest usable price post (of an earlier one on the page when newer ones cannot be read or their prices are far from the last known ones) and the post's time are taken from the page. | only while the one box of the optional third-party services and sites is ticked and the browser allows `t.me` (since 1.21.24, as from 1.18.0 to 1.21.22; in 1.21.23 one permission for the sites for prices and pictures, asked when you agreed to the data notice; in 1.17.0 its own box), KEYS.LAND prices and the Telegram setting are on, and the keys.land relay did not answer; at most once in 30 minutes (once a minute while no KEYS.LAND prices are at hand) |
 | backpack.tf (`backpack.tf`) | the public SteamID64 of the profile or trade partner you look at: `GET https://backpack.tf/api/IGetUsers/v3?steamid=<SteamID64>` | when you open a profile, a trade offer or the trade history |
 | SteamTrades (`www.steamtrades.com`) | the same SteamID64: `GET https://www.steamtrades.com/user/<SteamID64>`, with your own steamtrades.com cookies (since 2026-10-07; needed to pass its bot check) | the same |
@@ -267,7 +296,7 @@ look up (including other people's), for up to 2 years.
 Results are kept on your computer for a few hours (section 2); the price sources' lists only as item names with
 their prices and counts. The keys.land price relay is run by the author of Smart
 Trader; it only forwards public price data from KEYS.LAND, an independent service whose data is used with its owner's
-permission. The relay keeps only ordinary server logs (the requested address and the time) for a short time and nothing
+permission; since 1.22.0 it also hands over the CS2 price lists our own server collects from cs2.sh (an independent price service, used under its terms; the key for it lives only on our server, never in the extension), and the extension sends it only the list of sources it wants, nothing about you or your items. The relay keeps only ordinary server logs (the requested address and the time) for a short time and nothing
 about your account. backpack.tf, SteamTrades, CSGO-Rep, marketdb.info, pricempire, steamapis.com, the marketplaces
 and Telegram each apply their own terms and privacy policy, published on their sites.
 
@@ -299,6 +328,8 @@ a name tag's text and the asset id, and it may carry the owner's account number;
 owner's SteamID64 (or the market listing id), the asset id and a check number. No cookies, Steam session, token or
 trade link go with it; the tab opens without a referrer. The viewer sees your IP address, browser and time, and may
 pass the link on to its own services (for example, its 3D renderer); its own terms and privacy policy apply. The Details panel decodes the link on your computer and sends nothing.
+
+cs2.sh (since 1.22.0; CS2 tab → cs2.sh, on by default) is opened only by your click, as an ordinary link: the "check at cs2.sh" button in the inventory (your own or another account's, while its CS2 inventory is shown) and in the trade window (while the partner's CS2 inventory tab is shown) opens that inventory's page on cs2.sh in a new tab, with the account's public SteamID64 in the address (your own, the profile's or the trade partner's); "View in cs2.sh" under Steam's "View in Community Market" in an item's menu opens the item's page there, with the item's market name in the address. Nothing is sent before the click; Smart Trader itself makes no request to cs2.sh (the CS2 price lists of section 5 come from our own server). The tab opens without an opener or a referrer, with no cookies, Steam session or token; cs2.sh sees your IP address, browser and time, and its own terms and privacy policy apply.
 
 Links to other sites (for example SteamDB, backpack.tf, SteamTrades, Steam Card Exchange) are ordinary links: those
 sites receive nothing unless you open the link.
@@ -344,8 +375,8 @@ store.steampowered.com: through an open Steam tab or, with none open, one it ope
 closes again (checkout.steampowered.com only through a tab open there). The options page says where it was done; a
 site it could not finish is named, and pressing the button again with a page of that site open finishes it. What stays
 after it, until you clear those sites' data in the browser: a few small switches in the Steam sites' `localStorage`
-(the light theme's styles, the blurs for streams, the selling tools' cache counter) and the two Steam preference
-cookies of section 2 (`bMarketOptOut`, `birthtime`). Removing the extension removes its own storage as well, but it
+(the light theme's styles, the blurs for streams, the selling tools' cache counter, the settings tabs whose "Advanced
+settings" block you left open) and the two Steam preference cookies of section 2 (`bMarketOptOut`, `birthtime`). Removing the extension removes its own storage as well, but it
 does not reach the Steam sites' storage: to delete the caches there too, press "Delete all Smart Trader data" first (or
 clear steamcommunity.com's and store.steampowered.com's data in the browser). Caches expire and are trimmed on their
 own. The box of the optional third-party services and sites (section 5) deletes nothing: unticking it stops all of them
@@ -376,7 +407,7 @@ on, in the Steam site's own storage (section 2). 2026-10-10 (1.12.2) — the tra
 own incoming offers page too, read by the background part with your Steam cookies only to compare the items each offer
 shows with Steam's own record of it, nothing of it stored but an alert's offer ids (section 2) (the same data the offer
 watch and auto accept already read); KEYS.LAND prices on from the start and marketdb.info as Smart Trader's default
-price source (section 5): this update turns KEYS.LAND on once for every installation (the KEYS.LAND tab's switch turns
+price source (section 5): this update turns KEYS.LAND on once for every installation (the KEYS.LAND prices switch turns
 it off again), shows Steam Market and marketdb.info prices as cash by default (the keys.land relay's Steam conversion
 figures — the same request as before, now also for this) and makes marketdb.info the default source (it is still asked
 only after you turn it on here; until then the prices come from the Steam Market); the 3D view of CS2 items (section
@@ -485,6 +516,30 @@ tab or one it opens in the background for a moment; what stays after it is a few
 5 calls the 3D button by its new name, "3D View". The CS2 tiles' new look and the float scale of 1.21.24 only show
 Steam's own item data from the page: no new kind of data, recipient or read. In the same version the extension's consent is one box again (section 5, the owner's decision of 2026-10-25): every optional third-party service and site — the sites for prices and pictures and the services that receive Steam IDs alike — is under one box, "Use the optional third-party services and sites", empty on a first run; "I agree to the License Agreement and the data notice" then accepts the agreement and the notice only, and with the box ticked it asks the browser for all of their sites in one prompt; when the notice is shown again the box is ticked as you left it while the browser still allows every one of them, and unticking it there or in the options stops all of them and gives their sites' access back to the browser. While it is not ticked, Smart Trader's settings on Steam show a red notice and its button in Steam's header blinks red. No new kind of data or recipient. The License Agreement shown with it is re-issued as version 2026-10-25: its section 8 describes this one box; its section on automation is unchanged, so a consent to automation given under 2026-10-17 or 2026-10-24 is kept. Because these words correct what this
 policy told you, the effective date changes and the extension shows its data notice again (its version 16).
+2026-10-31 (1.22.0) — a new read with your Steam session, and
+corrections of what this policy told you. The new read (section 4): while the sales notifications are on (Notifications
+→ "Sales on the Steam Market", off unless you turn them on), one tab of the browser reads your own Steam Market history
+with your Steam session once per the period you chose, for the newest sales of your own listings; nothing is sent to
+anyone. Section 2 names what is kept for them: one record for the browser's account under its SteamID — the newest
+sales not told yet (the item's market name, what the buyer paid and what you received with the currency's id, the
+sale's time — for the newest 12; older ones only as their count and the totals per currency), the time of the newest
+event of your market history with the ids of that second's sales, and the times of the last read and the last
+notification; nothing about the buyer; "Delete all Smart Trader data" deletes it. The corrections (section 2): records
+kept on your computer that this policy did not name before — the trades on hold the item counts in Steam's header wait
+for (the offer's id, the hold's end, the inventories its items come into; 50 at most, each until a day after its hold
+ends) with the time of the newest trade seen on your own trade history or offers pages; Quick accept's pace
+(milliseconds per item of its clean accepts of 20 items or more, the last 10 per game, numbers only); the diagnostic
+line of the extension's options page about your answer to the data notice (its version and time, the optional
+services' state, the extension's id) with counts kept only in the browser's memory; and, in the Steam sites'
+`localStorage`, which settings tabs' "Advanced settings" block you left open (section 8: it stays after "Delete all
+Smart Trader data"). Section 5 says how the box of the optional services comes back when the notice is shown again:
+ticked as you left it while the browser still allows every one of their sites or cannot tell, empty with a line under
+it when one of them is no longer allowed; the License Agreement's section 8 says the same (its version 2026-10-25 is
+kept, so a consent to automation is kept too). Section 1 now says exactly what is stored before you agree: only the
+installation's own service state, with no personal data. Sections 2 and 5 also name, from 1.22.0, the CS2 price lists our server collects from cs2.sh (the Steam Market and five marketplaces) and hands over through the keys.land relay already listed — only the list of sources is sent, nothing about you or your items; one list kept 15 minutes — and cs2.sh among the sites only your click opens (the inventory's SteamID64 or the item's name in the address, nothing before the click). No new recipient or permission; your choice about the optional
+services, the keys.land relay's switch and your consent to automation stay as they were. Because this is a new read
+with your Steam session and these words correct what this policy told you, the effective date changes and the
+extension shows its data notice again, once (its version 17).
 
 ### 10. Contact
 ggggggdev@gmail.com
@@ -496,7 +551,7 @@ and the Steam logo are trademarks and/or registered trademarks of Valve Corporat
 
 ## Українська
 
-**Діє з:** 2026-10-25 · **Контакт:** ggggggdev@gmail.com
+**Діє з:** 2026-10-31 · **Контакт:** ggggggdev@gmail.com
 
 Smart Trader додає інструменти для обміну на сторінки Steam: зведення пропозицій обміну й ціни предметів, швидше
 прийняття вибраних вами пропозицій, помічники для інвентарю й торговельного майданчика, підсумки історії обмінів,
@@ -506,8 +561,9 @@ Smart Trader додає інструменти для обміну на стор
 вашої згоди, перш ніж щось робити.
 
 ### 1. Нічого не відбувається без вашої згоди
-Після встановлення розширення показує повідомлення про дані. Доки ви не натиснете «Погоджуюсь», воно нічого не
-робить на сторінках Steam: не читає даних сторінок, нічого не зберігає й не робить запитів.
+Після встановлення розширення показує повідомлення про дані. Доки ви не натиснете «Погоджуюсь», нічого не працює
+на сторінках Steam і запитів немає; зберігається лише службовий стан встановлення (які додаткові сервіси ввімкнено,
+лічильники діагностики), без особистих даних.
 
 ### 2. Дані на вашому комп’ютері
 Зберігаються у вашому браузері на цьому комп’ютері — у сховищі розширення (`chrome.storage.local`), а з 1.21.0 більші
@@ -530,6 +586,9 @@ Smart Trader додає інструменти для обміну на стор
   акаунт, що входить у цьому браузері, їх не бачить), а також рівень і XP вашого акаунта; рівні значків чужого профілю
   тримаються лише поки відкрита його сторінка й не зберігаються;
 - ваш вибір у параметрах розширення (додаткові сервіси, звук);
+- чи можуть працювати інструменти на сторінках backpack.tf: одне «так / ні», яке код Smart Trader на сторінках Steam
+  копіює з налаштувань («Сторінки backpack.tf» і перемикач гри «Team Fortress 2»), щоб фонова частина розширення
+  завантажувала ці інструменти на backpack.tf лише поки ввімкнено обидва;
 - ваш API-ключ pricempire, якщо ви задасте його на сторінці параметрів розширення (ніколи на сайті; з 1.21.9, раніше —
   у налаштуваннях Smart Trader): зберігається у власному сховищі розширення окремо від налаштувань (його власна база
   даних, яку не може прочитати жодна вебсторінка й жодна частина розширення, що працює на сторінці), ніколи не
@@ -540,7 +599,7 @@ Smart Trader додає інструменти для обміну на стор
   через нього (цього місяця, сьогодні) та їхній звичайний час;
 - (з 1.12.0) те, що потрібно Захисту від фішингу та скаму (окрема вкладка в налаштуваннях Smart Trader; з 1.19.2 —
   експериментальна функція, типово вимкнена: ніщо з цього пункту не читається й не зберігається, доки ви не ввімкнете
-  вкладку), щоб помітити зміну, — лише як односторонні ключовані хеші (відбитки, зроблені на цьому комп’ютері з
+  одну з її перевірок; з 1.22.0 кожна перевірка — власний перемикач), щоб помітити зміну, — лише як односторонні ключовані хеші (відбитки, зроблені на цьому комп’ютері з
   випадковим ключем цього встановлення; самих даних з них не прочитати): сесії й пристрої зі списку авторизованих
   пристроїв вашого акаунта і рядки e-mail, телефону й Steam Guard вашого акаунта; трейди, надіслані з цього браузера
   (не довше 15 днів); трейди, які ви скасовуєте на сторінках трейдів Steam (не довше 15 днів, щоб власне скасування
@@ -553,7 +612,7 @@ Smart Trader додає інструменти для обміну на стор
   вкладка веде перевірку. Слова відкритої тривоги безпеки (назва й місце пристрою, SteamID і нікнейм партнера, номери
   трейдів, яких вона стосується) зберігаються лише в цій тривозі, доки ви на неї не відповісте чи не закриєте її, не довше
   24 годин; тривога про самозванця в чаті так само зберігає своїми словами два порівняні нікнейми й SteamID співрозмовника.
-  Якщо вкладку «Трейд-офери» вимкнено, захист тримає фонове стеження за трейдами для своєї перевірки трейдів, з його
+  Якщо стеження за трейдами вимкнено, захист тримає фонове стеження за трейдами для своєї перевірки трейдів, з його
   звичними записами: SteamID вашого акаунта з лічильниками трейдів і номери прочитаних ним прийнятих надісланих трейдів.
   Список друзів вебчату та його відкриті особисті чати (імена, імена, які ви дали друзям, аватари; групові чати —
   ніколи) читаються на вашому комп’ютері, поки відкрита сторінка чату, і не зберігаються — крім слів відкритої тривоги
@@ -574,6 +633,24 @@ Smart Trader додає інструменти для обміну на стор
   надісланих трейдів, що чекають на підтвердження в мобільному застосунку Steam або поштою (щонайбільше 100, кожен
   щонайбільше 15 днів), і час трейдів, надісланих із цього браузера за останню годину (щонайбільше 20); видаляються,
   поки налаштування цієї кнопки вимкнене;
+- (з 1.22.0) для кількостей предметів у шапці Steam, для кожного акаунта під його SteamID (щонайбільше три акаунти):
+  крім кількості в кожному інвентарі й часу, коли її прочитано, — трейди на утриманні, предметів яких чекають ці
+  кількості (id трейд-оферу, коли Steam завершує утримання і в які з ваших інвентарів — номери гри й контексту —
+  надійдуть його предмети; щонайбільше 50, кожен до доби після кінця утримання), і час найновішого трейду, побаченого
+  на ваших власних сторінках історії трейдів або трейд-оферів — лише кількості, ідентифікатори й час, без назв
+  предметів;
+- (з 1.22.0) темп Quick accept: скільки мілісекунд на предмет Steam витратив на чисті прийняття 20 предметів і більше
+  в цьому браузері (останні 10 для кожної гри й для всіх ігор), для його зворотного відліку й довших очікувань, поки
+  Steam повільний, — лише числа, без трейдів і без акаунта;
+- (з 1.22.0) коли сповіщення про продажі на вкладці «Сповіщення» ввімкнено («Продажі на Ринку Steam», вимкнено, доки
+  ви їх не ввімкнете), один запис для акаунта цього браузера, під його SteamID (вхід в інший акаунт починає його
+  заново, нічого не повідомляючи про попередній): найновіші продажі ваших власних лотів на Ринку Steam, які цей браузер
+  побачив і про які ще не сповістив (ринкова назва предмета, скільки заплатив покупець і скільки отримали ви з id
+  валюти Steam, час продажу — для 12 найновіших; для старіших лише їхня кількість і загальні суми за кожною валютою, з
+  часом найдавнішого з них), час найновішої події вашої історії Ринку (виставлення чи зняття лота, покупка, продаж) з
+  id лотів і покупок Steam лише продажів цієї секунди (щоб рахувати кожен продаж один раз) і
+  час останнього читання вашої історії Ринку та останнього сповіщення — для одного сповіщення за період; нічого про
+  покупця; коли ви вимикаєте сповіщення, запис лишається як є, «Видалити всі дані Smart Trader» видаляє його;
 - (з 1.16.1) скільки трейдів у вас було з кожним торговим партнером і дні першого й останнього з них — лише як
   односторонні ключові хеші SteamID партнера з кількостями й днями (без імен, без предметів), для кожного акаунта
   (щонайбільше п’ять, по 2 000 партнерів), разом із ключовими хешами 4 000 найновіших трейдів (id трейд-оферу або
@@ -582,7 +659,10 @@ Smart Trader додає інструменти для обміну на стор
   «Жодного трейду з <дата>» на трейді від партнера, якого в ній немає. Нічого нікуди не надсилається; «Забути історію
   партнерів» (налаштування Smart Trader → Захист від фішингу та скаму) видаляє її;
 - ваша відповідь на повідомлення про дані й ваше прийняття Ліцензійної угоди: лише її версія, час і ваш вибір щодо
-  автоматизації (автоприйняття, автоскасування), без даних акаунта.
+  автоматизації (автоприйняття, автоскасування), без даних акаунта; (з 1.22.0) сторінка параметрів розширення (Огляд)
+  показує їх у рядку діагностики під повідомленням про дані разом зі станом додаткових сервісів та id розширення, а
+  також лічильники, що зберігаються лише в пам’яті браузера, доки його не закрито: скільки разів від запуску браузера
+  показано повідомлення й чому та скільки читань сховища розширення не вдалося.
 
 З 1.21.0 більші з цих записів зберігаються не в сховищі розширення, а у власній IndexedDB сайтів Steam у вашому
 браузері (база даних `ct-cache` сайту steamcommunity.com, а також store.steampowered.com, коли сторінки магазину
@@ -601,8 +681,9 @@ Smart Trader на сайтах Steam (розділ 8).
 Кілька функцій сторінок також тримають невеликі значення у власному сховищі сайту Steam у вашому браузері
 (`localStorage` та IndexedDB сайтів steamcommunity.com чи store.steampowered.com, як-от кеш цін ринку для
 інструментів продажу та списки цін увімкнених вами джерел цін: назви предметів із цінами й кількостями, нічого про
-вас; з 1.12.1, поки ввімкнено розмиття для стрімів, — котре з трьох увімкнено: гаманець, імена, аватари, щоб воно
-діяло з першого кадру сторінки), як це роблять і самі сторінки Steam. З 1.21.24 «Видалити всі дані Smart Trader»
+вас; з 1.22.0 також один список цін CS2 (Ринок Steam і п’ять маркетплейсів), який сервер цін keys.land передає з cs2.sh, зберігається типово 15 хвилин («Список cs2.sh: питати знову через» на вкладці CS2), назви предметів із цінами й кількостями й нічого про вас, видаляється кнопкою «Очистити» на вкладці «Провайдери цін»; також ідентифікатори предметів CS2 на маркетплейсах (Buff, Youpin, C5GAME) для посилань у картці предмета, один файл із того ж сервера, зберігається 24 години, нічого про вас, видаляється тією ж кнопкою «Очистити»; з 1.12.1, поки ввімкнено розмиття для стрімів, — котре з трьох увімкнено: гаманець, імена, аватари, щоб воно
+діяло з першого кадру сторінки; з 1.22.0 — у яких вкладках налаштувань ви залишили розгорнутим блок «Додаткові
+налаштування»), як це роблять і самі сторінки Steam. З 1.21.24 «Видалити всі дані Smart Trader»
 видаляє й ці бази IndexedDB (розділ 8); кілька значень у `localStorage` лишаються, доки ви не очистите дані цього
 сайту в браузері. Два налаштування також записують по одному власному cookie налаштувань Steam, як це роблять кнопки
 самого Steam: «Завантажувати класичні сторінки ринку Steam замість Market Beta» (Продаж і ринок; з 1.21.18 типово
@@ -627,7 +708,10 @@ Steam (`steamcommunity.com`, `store.steampowered.com`, `checkout.steampowered.co
 ціни, стан пропозицій) з вашою сесією Steam, як це зробила б сторінка. (З 1.21.23) На сторінці Steam мовою, іншою за англійську,
 вони також просять у Steam англійський опис класу предмета TF2 чи CS2, рядки якого не можуть прочитати цією мовою
 (щонайбільше 200 за відвідування сторінки, у фоні; зберігається разом з описами предметів розділу 2 і запитується
-знову через 30 днів); це йде лише до Steam. Інструменти наборів карток читають у Steam
+знову через 30 днів); це йде лише до Steam. (З 1.22.0) Поки сповіщення про продажі на вкладці «Сповіщення» ввімкнено,
+одна вкладка браузера читає вашу власну історію Ринку Steam (`steamcommunity.com/market/myhistory/`) з вашою сесією
+Steam раз за обраний вами період (типово 15 хвилин) — заради найновіших продажів ваших власних лотів; нічого нікому не
+надсилається. Інструменти наборів карток читають у Steam
 подробиці ваших власних значків (набори карток, ваші рівні й XP), а сторінки значків публічного профілю — лише коли ви
 просите рівні цього профілю. Крафт значків із наборів карток — це зміна у вашому акаунті: він надсилається до Steam
 (по одному крафту) лише після того, як ви побачили план — ігри, набори й XP — і підтвердили його; його можна зупинити
@@ -650,7 +734,7 @@ Steam (`steamcommunity.com`, `store.steampowered.com`, `checkout.steampowered.co
 рядків e-mail, телефону й Steam Guard (читається з відкритої вкладки `store.steampowered.com`; поки такої немає, ці
 рядки чекають); ваші надіслані трейди — власними запитами фонового стеження за трейдами (його лічильники; його список
 надісланих — коли ці лічильники змінюються, і не частіше ніж раз на 5 хвилин, поки якийсь ваш надісланий трейд чекає;
-якщо вкладку «Трейд-офери» або її сповіщення про прийняті трейди вимкнено, ці читання списку робляться для цієї
+якщо стеження за трейдами або його сповіщення про прийняті трейди вимкнено, ці читання списку робляться для цієї
 перевірки; для тривоги про такий трейд — одне читання публічного профілю Steam його партнера, а за ознаки фішингу — і
 партнера скасованого трейду, щоб тривога показала нікнейм); ваш власний інвентар із сервера Steam, щоб порівняти з
 тим, що показує сторінка інвентаря, — коли ви відкриваєте свій інвентар (типово не частіше ніж раз на 6 годин;
@@ -700,7 +784,7 @@ steamcommunity.com, а перед тим як автоприйняття при�
 ### 5. Додаткові сервіси
 Усі додаткові сторонні сервіси й сайти — під однією галочкою (з 1.21.24, як і з 1.18.0 до 1.21.22; у 1.21.23 сайти для цін і картинок були без галочки й запитувалися в браузера кнопкою «Погоджуюсь», а сервіси, що отримують Steam ID, вмикала власна галочка): «Використовувати додаткові сторонні сервіси й сайти» на сторінці, що показується перед початком роботи Smart Trader, і «Дозволити додаткові сервіси й сайти» в параметрах розширення (та сама галочка).
 Під нею: джерела цін (з 2026-10-09) marketdb.info, pricempire і публічні файли цін маркетплейсів (Market.CSGO та його сайти TF2, Dota 2 і Rust, Waxpeer, LOOT.FARM, Lis-Skins), Telegram-канал KEYS.LAND і (з 1.21.23) картинки Unusual-ефектів TF2 з itempedia.tf, що не отримують нічого про вас чи ваші предмети; три сайти репутації (backpack.tf, SteamTrades, CSGO-Rep), що отримують публічний SteamID64 партнера з обміну, якого ви переглядаєте; і (з 1.18.0) steamapis.com, що отримує ваш власний ключ і SteamID64 кожного інвентаря, завантаженого через нього.
-Під час першого запуску галочка порожня, і «Погоджуюсь з Ліцензійною угодою та повідомленням про дані» тоді приймає лише угоду й повідомлення про дані: у браузера нічого не запитується, і жоден із цих сервісів не працює. З позначеною галочкою та сама кнопка також одним запитом просить браузер дозволити всі їхні сайти, і галочка вважається позначеною, лише коли браузер тримає кожен із них; якщо ви відхилите цей запит, вашу згоду однаково буде записано, а ці сервіси лишаться вимкненими, доки ви не позначите галочку в параметрах. Коли сторінка питає знову після оновлення, галочка позначена так, як ви її лишили, поки браузер ще дозволяє кожен із цих сайтів.
+Під час першого запуску галочка порожня, і «Погоджуюсь з Ліцензійною угодою та повідомленням про дані» тоді приймає лише угоду й повідомлення про дані: у браузера нічого не запитується, і жоден із цих сервісів не працює. З позначеною галочкою та сама кнопка також одним запитом просить браузер дозволити всі їхні сайти, і галочка вважається позначеною, лише коли браузер тримає кожен із них; якщо ви відхилите цей запит, вашу згоду однаково буде записано, а ці сервіси лишаться вимкненими, доки ви не позначите галочку в параметрах. Коли сторінка питає знову після оновлення, галочка позначена так, як ви її лишили, поки браузер ще дозволяє кожен із цих сайтів або коли браузер не може цього сказати (тоді «Погоджуюсь» із галочкою, залишеною як є, зберігає ваші сервіси такими, якими вони були: нічого не запитується, не вимикається й не повертається); коли котрийсь із цих сайтів уже не дозволено, галочка порожня, а рядок під нею каже, що раніше ви її позначили, — позначте її знову, і та сама кнопка попросить браузер дозволити їх.
 Якщо її зняти — на тій сторінці, коли вона питає знову, або в параметрах, — вимикаються всі вони, а доступ до їхніх сайтів повертається браузеру; забрати дозвіл сайту можна також у власних налаштуваннях доступу до сайтів для розширення в браузері або кнопкою «Видалити всі дані Smart Trader».
 Поки галочку не позначено, ціни беруться лише з Ринку Steam, без картинок Unusual-ефектів, без цін маркетплейсів, без резерву KEYS.LAND і без репутації партнерів із цих сайтів; налаштування Smart Trader на Steam показують червону табличку з кнопкою до параметрів, а його кнопка в шапці Steam блимає червоним.
 Типові налаштування Smart Trader використовують ціни marketdb.info і файл цін Waxpeer (заводський Пресет 1), резерв KEYS.LAND із Telegram (коли сервер keys.land не відповідає), картинки Unusual-ефектів TF2 з itempedia.tf і сайти репутації, тож позначена галочка одразу їх запускає: репутація партнерів із backpack.tf (з його інструментами на сторінках backpack.tf), SteamTrades (з вашими cookie steamtrades.com) і CSGO-Rep.
@@ -723,7 +807,7 @@ pricempire — ще й ваш власний API-ключ. pricempire працю
 в адресі й ніколи до іншого хоста; він ніколи не передається вебсторінкам, зокрема сторінкам Steam, і не записується в
 діагностичний журнал. Сервер цін keys.land дозволений від початку (його хост встановлюється разом із розширенням),
 і Smart Trader звертається до нього лише тоді, коли ці ціни увімкнені в налаштуваннях Smart Trader (KEYS.LAND →
-«Використовувати ціни KEYS.LAND», з 1.12.2 увімкнено від початку; перемикач вкладки KEYS.LAND їх вимикає; з 1.12.4 —
+«Використовувати ціни KEYS.LAND», з 1.12.2 увімкнено від початку; перемикач цін KEYS.LAND їх вимикає; з 1.12.4 —
 єдиний перемикач цих цін із будь-яким джерелом цін, зокрема маркетплейсом), або — лише по показники обміну в Steam —
 коли джерелом цін вибрано маркетплейс, а предмети, яких він не оцінює, оцінюються мінус автоматична комісія виведення,
 або коли ціни Ринку Steam чи marketdb.info показуються як готівка («Готівка після комісії виведення», типово; завжди,
@@ -751,7 +835,7 @@ Steam, а фонова частина розширення надсилає йо
 
 | Сервіс | Що надсилається | Коли |
 | --- | --- | --- |
-| Сервер цін keys.land (хост, зазначений у дозволах розширення) | лише те, яка ціна потрібна: `GET …/kl/v1/market/series?item=key` (або `ticket`, `gems`) `&range=24h`; і показники обміну ключів, квитків і самоцвітів у Steam: `GET …/kl/v1/steam/convert` (без параметрів). Нічого про вас чи ваш обліковий запис. | коли показуються ціни ключів TF2, квитків чи самоцвітів (не частіше ніж раз на хвилину) — лише коли ціни KEYS.LAND увімкнені в налаштуваннях Smart Trader (з 1.12.2 увімкнено від початку; перемикач вкладки KEYS.LAND їх вимикає; з будь-яким джерелом цін, зокрема маркетплейсом); показники обміну — лише коли джерелом цін вибрано маркетплейс, а предмети, яких він не оцінює, оцінюються мінус автоматична комісія виведення, або коли ціни Ринку Steam чи marketdb.info показуються як готівка (типово; завжди, поки KEYS.LAND увімкнено) (не частіше ніж раз на кілька хвилин); сам сервер дозволений від початку, у параметрах його можна вимкнути |
+| Сервер цін keys.land (хост, зазначений у дозволах розширення) | лише те, яка ціна потрібна: `GET …/kl/v1/market/series?item=key` (або `ticket`, `gems`) `&range=24h`; і показники обміну ключів, квитків і самоцвітів у Steam: `GET …/kl/v1/steam/convert` (без параметрів). Нічого про вас чи ваш обліковий запис. (З 1.22.0) Списки цін CS2, які наш сервер збирає з cs2.sh (Ринок Steam і п’ять маркетплейсів: BUFF, Youpin, CSFloat, Skinport, C5Game): `GET …/v1/cs2sh/latest?sources=<джерела>` надсилає лише набір джерел; нічого про вас чи ваші предмети, ніколи назву предмета. Раз на добу також ідентифікатори предметів CS2 на маркетплейсах для посилань у картці предмета (`GET …/v1/cs2sh/ids`, без параметрів): нічого про вас. | коли показуються ціни ключів TF2, квитків чи самоцвітів (не частіше ніж раз на хвилину) — лише коли ціни KEYS.LAND увімкнені в налаштуваннях Smart Trader (з 1.12.2 увімкнено від початку; перемикач цін KEYS.LAND їх вимикає; з будь-яким джерелом цін, зокрема маркетплейсом); показники обміну — лише коли джерелом цін вибрано маркетплейс, а предмети, яких він не оцінює, оцінюються мінус автоматична комісія виведення, або коли ціни Ринку Steam чи marketdb.info показуються як готівка (типово; завжди, поки KEYS.LAND увімкнено) (не частіше ніж раз на кілька хвилин); (з 1.22.0) список цін CS2: один список, зберігається 15 хвилин, коли предмету CS2 потрібна ціна від члена cs2.sh вашого активного пресета («Ринок Steam (cs2.sh)», «Маркетплейси (cs2.sh)») або ввімкнено ціни на маркетплейсах вкладки CS2 і сторінка показує предмети CS2; файл ідентифікаторів раз на добу за тієї ж умови (зберігається 24 години); сам сервер дозволений від початку, у параметрах його можна вимкнути |
 | Telegram (`t.me`), канал KEYS.LAND | лише запит публічної сторінки каналу: `GET https://t.me/s/keysland`. Нічого про вас чи ваші предмети, без cookie. Зі сторінки беруться лише ціни ключів, білетів і гемів його останнього придатного поста з цінами (попереднього на сторінці, коли новіші не вдалося прочитати або їхні ціни далекі від останніх відомих) і час поста. | лише коли позначено галочку додаткових сторонніх сервісів і сайтів і браузер дозволяє `t.me` (з 1.21.24, як і з 1.18.0 до 1.21.22; у 1.21.23 — один дозвіл на сайти для цін і картинок, запит, коли ви погоджувалися з повідомленням про дані; у 1.17.0 — власна галочка), ціни KEYS.LAND і налаштування Telegram увімкнені, а сервер цін keys.land не відповів; не частіше ніж раз на 30 хвилин (раз на хвилину, поки цін KEYS.LAND немає зовсім) |
 | backpack.tf (`backpack.tf`) | публічний SteamID64 профілю чи партнера з обміну, якого ви переглядаєте: `GET https://backpack.tf/api/IGetUsers/v3?steamid=<SteamID64>` | коли ви відкриваєте профіль, пропозицію обміну чи історію обмінів |
 | SteamTrades (`www.steamtrades.com`) | той самий SteamID64: `GET https://www.steamtrades.com/user/<SteamID64>`, з вашими власними cookie steamtrades.com (з 2026-10-07; потрібно, щоб пройти його перевірку на ботів) | так само |
@@ -764,7 +848,7 @@ Steam, а фонова частина розширення надсилає йо
 Результати зберігаються на вашому комп’ютері кілька годин (розділ 2); списки джерел цін — лише як назви предметів із
 цінами й кількостями. Сервер цін keys.land тримає автор Smart Trader;
 він лише пересилає публічні дані про ціни з KEYS.LAND — незалежного сервісу, дані якого використовуються з дозволу його
-власника. Сам сервер недовго зберігає лише звичайні журнали (запитану адресу й час) і нічого про ваш акаунт. backpack.tf,
+власника; з 1.22.0 він також передає списки цін CS2, які наш власний сервер збирає з cs2.sh (незалежний сервіс цін, дані якого використовуються за його умовами; ключ до нього є лише на нашому сервері, ніколи в розширенні), а розширення надсилає йому лише набір потрібних джерел, нічого про вас чи ваші предмети. Сам сервер недовго зберігає лише звичайні журнали (запитану адресу й час) і нічого про ваш акаунт. backpack.tf,
 SteamTrades, CSGO-Rep, marketdb.info, pricempire, steamapis.com, маркетплейси й Telegram застосовують власні умови й політики конфіденційності,
 опубліковані на їхніх сайтах.
 
@@ -798,6 +882,8 @@ in Game…». У розширенні сторінка переглядача (3
 Переглядач бачить вашу IP-адресу, браузер і час і може передати посилання своїм власним сервісам (наприклад, своєму
 3D-рендереру); діють його власні умови й політика конфіденційності. Панель
 «Подробиці» розшифровує посилання на вашому комп’ютері й нічого не надсилає.
+
+cs2.sh (з 1.22.0; вкладка CS2 → cs2.sh, типово ввімкнено) відкривається лише за вашим кліком, як звичайне посилання: кнопка «перевірити на cs2.sh» в інвентарі (своєму чи чужому, поки показано його інвентар CS2) і у вікні трейду (поки показано вкладку CS2 інвентаря партнера) відкриває сторінку цього інвентаря на cs2.sh у новій вкладці з публічним SteamID64 акаунта в адресі (вашим, власника профілю чи партнера з трейду); «Відкрити на cs2.sh» під «View in Community Market» у меню предмета відкриває сторінку предмета там, з ринковою назвою предмета в адресі. До кліку нічого не надсилається; сам Smart Trader не робить жодного запиту до cs2.sh (списки цін CS2 з розділу 5 надходять із нашого власного сервера). Вкладка відкривається без opener і реферера, без cookie, сесії Steam чи токена; cs2.sh бачить вашу IP-адресу, браузер і час, і діють його власні умови й політика конфіденційності.
 
 Посилання на інші сайти (наприклад, SteamDB, backpack.tf, SteamTrades, Steam Card Exchange) — звичайні посилання:
 ці сайти нічого не отримують, доки ви не відкриєте посилання.
@@ -844,8 +930,9 @@ Trader» — це видаляє все з розділу 2, що лежить �
 (checkout.steampowered.com — лише через відкриту там вкладку). Сторінка параметрів каже, де це зроблено; сайт, на
 якому завершити не вдалося, названо, і повторне натискання кнопки з відкритою сторінкою цього сайту це завершує. Після
 цього, доки ви не очистите дані цих сайтів у браузері, лишаються кілька дрібних перемикачів у `localStorage` сайтів
-Steam (стилі світлої теми, розмиття для стрімів, лічильник кешу інструментів продажу) і два cookie налаштувань Steam з
-розділу 2 (`bMarketOptOut`, `birthtime`). Видалення розширення теж видаляє його власне сховище, але до сховища сайтів
+Steam (стилі світлої теми, розмиття для стрімів, лічильник кешу інструментів продажу, вкладки налаштувань, у яких ви
+залишили розгорнутим блок «Додаткові налаштування») і два cookie налаштувань Steam з розділу 2 (`bMarketOptOut`,
+`birthtime`). Видалення розширення теж видаляє його власне сховище, але до сховища сайтів
 Steam не дістає: щоб видалити й кеші там, спершу натисніть «Видалити всі дані Smart Trader» (або очистіть дані
 steamcommunity.com і store.steampowered.com у браузері). Кеші застарівають і скорочуються самі. Галочка додаткових сторонніх сервісів і сайтів (розділ 5) нічого не
 видаляє: якщо її зняти, усі вони одразу зупиняються, а доступ до їхніх сайтів повертається браузеру; те, що вони
@@ -877,7 +964,7 @@ steamcommunity.com і store.steampowered.com у браузері). Кеші за
 трейд, із власним записом Steam про нього, з цього не зберігається нічого, крім номерів трейдів у тривозі (розділ 2)
 (ті самі дані, які вже читають стеження за трейдами й автоприйняття); ціни KEYS.LAND увімкнені від початку, а
 marketdb.info — типове джерело цін Smart Trader (розділ 5): це оновлення один раз вмикає KEYS.LAND для кожного
-встановлення (перемикач вкладки KEYS.LAND вимикає його знову), типово показує ціни Ринку Steam і marketdb.info як готівку
+встановлення (перемикач цін KEYS.LAND вимикає його знову), типово показує ціни Ринку Steam і marketdb.info як готівку
 (показники обміну в Steam із сервера keys.land — той самий запит, що й раніше, тепер і для цього) і робить marketdb.info
 типовим джерелом (до нього й далі звертаються лише після того, як ви ввімкнете його тут; доти ціни беруться з Ринку
 Steam); 3D-перегляд предметів CS2 (розділ 5): переглядач відкривається в новій вкладці лише за вашим кліком, з
@@ -990,6 +1077,31 @@ Smart Trader» до цієї версії не діставало. Зміна (�
 лише показують власні дані Steam про предмет зі сторінки: жодного нового виду даних, одержувача чи читання. У тій самій версії згода в розширенні знову одна галочка (розділ 5, рішення власника від 2026-10-25): усі додаткові сторонні сервіси й сайти — і сайти для цін і картинок, і сервіси, що отримують Steam ID, — під однією галочкою «Використовувати додаткові сторонні сервіси й сайти», порожньою під час першого запуску; «Погоджуюсь з Ліцензійною угодою та повідомленням про дані» тоді приймає лише угоду й повідомлення, а з позначеною галочкою одним запитом просить браузер дозволити всі їхні сайти; коли повідомлення показується знову, галочка позначена так, як ви її лишили, поки браузер ще дозволяє кожен із них, а якщо її зняти там чи в параметрах, усі вони зупиняються, а доступ до їхніх сайтів повертається браузеру. Поки її не позначено, налаштування Smart Trader на Steam показують червону табличку, а його кнопка в шапці Steam блимає червоним. Жодного нового виду даних чи одержувача. Ліцензійну угоду, показану разом із ним, перевидано як версію 2026-10-25: її розділ 8 описує цю одну галочку; її розділ про автоматизацію не змінився, тож згода на автоматизацію, дана за версією 2026-10-17 чи 2026-10-24, зберігається. Оскільки ці
 слова виправляють те, що ця політика вам казала, дата набрання чинності змінюється, а розширення знову показує
 повідомлення про дані (його версія 16).
+2026-10-31 (1.22.0) — нове читання з вашою сесією Steam і
+виправлення того, що ця політика вам казала. Нове читання (розділ 4): поки сповіщення про продажі ввімкнено
+(«Сповіщення» → «Продажі на Ринку Steam», вимкнено, доки ви їх не ввімкнете), одна вкладка браузера читає вашу власну
+історію Ринку Steam з вашою сесією Steam раз за обраний вами період — заради найновіших продажів ваших власних лотів;
+нічого нікому не надсилається. Розділ 2 називає, що для них зберігається: один запис для акаунта цього браузера під
+його SteamID — найновіші продажі, про які ще не сповіщено (ринкова назва предмета, скільки заплатив покупець і скільки
+отримали ви з id валюти, час продажу — для 12 найновіших; старіші лише як їхня кількість і загальні суми за кожною
+валютою), час найновішої події вашої історії Ринку з id продажів цієї секунди та час останнього читання й останнього
+сповіщення; нічого про покупця; «Видалити всі дані Smart Trader» видаляє його. Виправлення (розділ 2): записи на вашому
+комп’ютері, яких ця політика раніше не називала, — трейди на утриманні, на які чекають кількості предметів у шапці
+Steam (id трейд-оферу, кінець утримання, інвентарі, до яких надійдуть його предмети; щонайбільше 50, кожен до доби після
+кінця утримання), з часом найновішого трейду, побаченого на ваших сторінках історії трейдів або трейд-оферів; темп
+Quick accept (мілісекунди на предмет у його чистих прийняттях 20 предметів і більше, останні 10 для кожної гри, лише
+числа); рядок діагностики на сторінці параметрів розширення про вашу відповідь на повідомлення про дані (її версія й
+час, стан додаткових сервісів, id розширення) з лічильниками, що зберігаються лише в пам’яті браузера; і, у
+`localStorage` сайтів Steam, у яких вкладках налаштувань ви залишили розгорнутим блок «Додаткові налаштування» (розділ
+8: це значення лишається після «Видалити всі дані Smart Trader»). Розділ 5 каже, якою повертається галочка додаткових
+сервісів, коли повідомлення показується знову: позначеною так, як ви її лишили, поки браузер ще дозволяє кожен із їхніх
+сайтів або не може цього сказати, і порожньою з рядком під нею, коли котрийсь із них уже не дозволено; розділ 8
+Ліцензійної угоди каже те саме (її версія 2026-10-25 лишається, тож згода на автоматизацію теж зберігається). Розділ 1
+тепер точно каже, що зберігається до вашої згоди: лише службовий стан встановлення, без особистих даних. Розділи 2 і 5 також називають з 1.22.0 списки цін CS2, які наш сервер збирає з cs2.sh (Ринок Steam і п’ять маркетплейсів) і передає через уже зазначений сервер цін keys.land (надсилається лише набір джерел, нічого про вас чи ваші предмети; один список зберігається 15 хвилин), і cs2.sh серед сайтів, які відкриває лише ваш клік (SteamID64 інвентаря чи назва предмета в адресі, до кліку нічого). Жодного
+нового одержувача чи дозволу; ваш вибір щодо додаткових сервісів, перемикач ретранслятора keys.land і ваша згода на
+автоматизацію лишаються такими, якими були. Оскільки це нове читання з вашою сесією Steam, а ці слова виправляють те, що
+ця політика вам казала, дата набрання чинності змінюється, а розширення знову показує повідомлення про дані — один раз
+(його версія 17).
 
 ### 10. Контакт
 ggggggdev@gmail.com
@@ -1001,7 +1113,7 @@ Smart Trader — незалежний проєкт. Він не пов’яза�
 
 ## Русский
 
-**Действует с:** 2026-10-25 · **Контакт:** ggggggdev@gmail.com
+**Действует с:** 2026-10-31 · **Контакт:** ggggggdev@gmail.com
 
 Smart Trader добавляет инструменты для обмена на страницы Steam: сводки предложений обмена и цены предметов, более
 быстрое принятие выбранных вами предложений, помощники для инвентаря и торговой площадки, итоги истории обменов,
@@ -1011,8 +1123,9 @@ Smart Trader добавляет инструменты для обмена на 
 расширение снова попросит вашего согласия, прежде чем что-либо делать.
 
 ### 1. Ничего не происходит без вашего согласия
-После установки расширение показывает уведомление о данных. Пока вы не нажмёте «Согласен», оно ничего не делает на
-страницах Steam: не читает данные страниц, ничего не сохраняет и не делает запросов.
+После установки расширение показывает уведомление о данных. Пока вы не нажмёте «Согласен», ничего не работает на
+страницах Steam и запросов нет; хранится лишь служебное состояние установки (какие дополнительные сервисы включены,
+счётчики диагностики), без личных данных.
 
 ### 2. Данные на вашем компьютере
 Хранятся в вашем браузере на этом компьютере — в хранилище расширения (`chrome.storage.local`), а с 1.21.0 более
@@ -1037,6 +1150,9 @@ Smart Trader добавляет инструменты для обмена на 
   что другой аккаунт, входящий в этом браузере, их не видит), а также уровень и XP вашего аккаунта; уровни значков
   чужого профиля держатся только пока открыта его страница и не сохраняются;
 - ваш выбор в параметрах расширения (дополнительные сервисы, звук);
+- могут ли работать инструменты на страницах backpack.tf: одно «да / нет», которое код Smart Trader на страницах
+  Steam копирует из настроек («Страницы backpack.tf» и переключатель игры «Team Fortress 2»), чтобы фоновая часть
+  расширения загружала эти инструменты на backpack.tf только пока включены оба;
 - ваш API-ключ pricempire, если вы зададите его на странице параметров расширения (никогда на сайте; с 1.21.9, раньше —
   в настройках Smart Trader): хранится в собственном хранилище расширения отдельно от настроек (его собственная база
   данных, которую не может прочитать ни одна веб-страница и ни одна часть расширения, работающая на странице), никогда
@@ -1047,7 +1163,7 @@ Smart Trader добавляет инструменты для обмена на 
   через него (в этом месяце, сегодня) и их обычное время;
 - (с 1.12.0) то, что нужно Защите от фишинга и скама (отдельная вкладка в настройках Smart Trader; с 1.19.2 —
   экспериментальная функция, по умолчанию выключена: ничто из этого пункта не читается и не хранится, пока вы не
-  включите вкладку), чтобы заметить изменение, — только как односторонние ключевые хеши (отпечатки, сделанные на этом
+  включите одну из её проверок; с 1.22.0 каждая проверка — свой переключатель), чтобы заметить изменение, — только как односторонние ключевые хеши (отпечатки, сделанные на этом
   компьютере со случайным ключом этой установки; самих данных из них не прочитать): сессии и устройства из списка
   авторизованных устройств вашего аккаунта и строки e-mail, телефона и Steam Guard вашего аккаунта; трейды,
   отправленные из этого браузера (не дольше 15 дней); трейды, которые вы отменяете на страницах трейдов Steam (не
@@ -1060,7 +1176,7 @@ Smart Trader добавляет инструменты для обмена на 
   где-то ещё (как хеши, 40 минут), отмены, ещё стоящие в очереди, и какая вкладка ведёт проверку. Слова открытой тревоги
   безопасности (название и место устройства, SteamID и никнейм партнёра, номера трейдов, которых она касается) хранятся только в
   этой тревоге, пока вы на неё не ответите или не закроете её, не дольше 24 часов; тревога о самозванце в чате так же
-  хранит своими словами два сравнённых никнейма и SteamID собеседника. Если вкладка «Трейд-офферы» выключена, защита держит фоновое
+  хранит своими словами два сравнённых никнейма и SteamID собеседника. Если слежение за трейдами выключено, защита держит фоновое
   слежение за трейдами для своей проверки трейдов, с его обычными записями: SteamID вашего аккаунта со счётчиками
   трейдов и номера прочитанных им принятых отправленных трейдов. Список друзей веб-чата и его открытые личные чаты (имена, имена,
   которые вы дали друзьям, аватары; групповые чаты — никогда) читаются на вашем компьютере, пока открыта страница чата,
@@ -1080,6 +1196,25 @@ Smart Trader добавляет инструменты для обмена на 
   отправленных трейдов, которые ждут подтверждения в мобильном приложении Steam или по почте (не больше 100, каждый не
   больше 15 дней), и время трейдов, отправленных из этого браузера за последний час (не больше 20); удаляются, пока
   настройка этой кнопки выключена;
+- (с 1.22.0) для количества предметов в шапке Steam, для каждого аккаунта под его SteamID (не больше трёх аккаунтов):
+  кроме количества в каждом инвентаре и времени, когда оно прочитано, — трейды на удержании, предметов которых ждёт этот
+  подсчёт (id трейд-оффера, когда Steam заканчивает удержание и в какие из ваших инвентарей — номера игры и контекста —
+  придут его предметы; не больше 50, каждый до суток после конца удержания), и время самого нового трейда, увиденного
+  на ваших собственных страницах истории трейдов или трейд-офферов — только количества, идентификаторы и время, без
+  названий предметов;
+- (с 1.22.0) темп Quick accept: сколько миллисекунд на предмет Steam потратил на чистые принятия 20 предметов и больше
+  в этом браузере (последние 10 для каждой игры и для всех игр), для его обратного отсчёта и более долгих ожиданий, пока
+  Steam медленный, — только числа, без трейдов и без аккаунта;
+- (с 1.22.0) когда уведомления о продажах на вкладке «Уведомления» включены («Продажи на Рынке Steam», выключено, пока
+  вы их не включите), одна запись для аккаунта этого браузера, под его SteamID (вход в другой аккаунт начинает её
+  заново, ничего не сообщая о прежнем): самые новые продажи ваших собственных лотов на Рынке Steam, которые этот
+  браузер увидел и о которых ещё не уведомил (рыночное название предмета, сколько заплатил покупатель и сколько
+  получили вы с id валюты Steam, время продажи — для 12 самых новых; для более старых только их количество и общие
+  суммы по каждой валюте, со временем самой давней из них), время самого нового события вашей истории Рынка
+  (выставление или снятие лота, покупка, продажа) с id лотов и покупок Steam только продаж этой секунды (чтобы
+  считать каждую продажу один раз) и время последнего чтения вашей истории Рынка и последнего уведомления — для одного
+  уведомления за период; ничего о покупателе; когда вы выключаете уведомления, запись остаётся как есть, «Удалить все
+  данные Smart Trader» удаляет её;
 - (с 1.16.1) сколько трейдов у вас было с каждым торговым партнёром и дни первого и последнего из них — только как
   односторонние ключевые хеши SteamID партнёра с количествами и днями (без имён, без предметов), для каждого аккаунта
   (не больше пяти, по 2 000 партнёров), вместе с ключевыми хешами 4 000 самых новых трейдов (id трейд-оффера или
@@ -1088,7 +1223,10 @@ Smart Trader добавляет инструменты для обмена на 
   показывает «Ни одного трейда с <дата>» на трейде от партнёра, которого в ней нет. Ничего никуда не отправляется;
   «Забыть историю партнёров» (настройки Smart Trader → Защита от фишинга и скама) удаляет её;
 - ваш ответ на уведомление о данных и ваше принятие Лицензионного соглашения: только его версия, время и ваш выбор
-  насчёт автоматизации (автопринятия, автоотмены), без данных аккаунта.
+  насчёт автоматизации (автопринятия, автоотмены), без данных аккаунта; (с 1.22.0) страница параметров расширения
+  (Обзор) показывает их в строке диагностики под уведомлением о данных вместе с состоянием дополнительных сервисов и id
+  расширения, а также счётчики, которые хранятся только в памяти браузера, пока он не закрыт: сколько раз с запуска
+  браузера показано уведомление и почему и сколько чтений хранилища расширения не удалось.
 
 С 1.21.0 более крупные из этих записей хранятся не в хранилище расширения, а в собственной IndexedDB сайтов Steam в
 вашем браузере (база данных `ct-cache` сайта steamcommunity.com, а также store.steampowered.com, когда страницы
@@ -1107,8 +1245,9 @@ Smart Trader добавляет инструменты для обмена на 
 Несколько функций страниц также хранят небольшие значения в собственном хранилище сайта Steam в вашем браузере
 (`localStorage` и IndexedDB сайтов steamcommunity.com или store.steampowered.com, например кеш цен торговой
 площадки для инструментов продажи и списки цен включённых вами источников цен: названия предметов с ценами и
-количествами, ничего о вас; с 1.12.1, пока включено размытие для стримов, — какое из трёх включено: кошелёк, имена,
-аватары, чтобы оно действовало с первого кадра страницы), как это делают и сами страницы Steam. С 1.21.24 «Удалить все
+количествами, ничего о вас; с 1.22.0 также один список цен CS2 (Рынок Steam и пять маркетплейсов), который сервер цен keys.land передаёт с cs2.sh, хранится по умолчанию 15 минут («Список cs2.sh: спрашивать снова через» на вкладке CS2), названия предметов с ценами и количествами и ничего о вас, удаляется кнопкой «Очистить» на вкладке «Источники цен»; также идентификаторы предметов CS2 на маркетплейсах (Buff, Youpin, C5GAME) для ссылок в карточке предмета, один файл с того же сервера, хранится 24 часа, ничего о вас, удаляется той же кнопкой «Очистить»; с 1.12.1, пока включено размытие для стримов, — какое из трёх включено: кошелёк, имена,
+аватары, чтобы оно действовало с первого кадра страницы; с 1.22.0 — в каких вкладках настроек вы оставили развёрнутым
+блок «Дополнительные настройки»), как это делают и сами страницы Steam. С 1.21.24 «Удалить все
 данные Smart Trader» удаляет и эти базы IndexedDB (раздел 8); несколько значений в `localStorage` остаются, пока вы не
 очистите данные этого сайта в браузере. Две настройки также записывают по одному собственному cookie настроек Steam,
 как это делают кнопки самого Steam: «Загружать классические страницы рынка Steam вместо Market Beta» (Продажа и рынок;
@@ -1132,7 +1271,10 @@ Steam (`steamcommunity.com`, `store.steampowered.com`, `checkout.steampowered.co
 цены, состояние предложений) с вашей сессией Steam, как это сделала бы страница. (С 1.21.23) На странице Steam на языке, отличном
 от английского, они также запрашивают у Steam английское описание класса предмета TF2 или CS2, строки которого не
 могут прочитать на этом языке (не более 200 за посещение страницы, в фоне; хранится вместе с описаниями предметов
-раздела 2 и запрашивается снова через 30 дней); это уходит только в Steam. Инструменты наборов карточек читают у
+раздела 2 и запрашивается снова через 30 дней); это уходит только в Steam. (С 1.22.0) Пока уведомления о продажах на
+вкладке «Уведомления» включены, одна вкладка браузера читает вашу собственную историю Рынка Steam
+(`steamcommunity.com/market/myhistory/`) с вашей сессией Steam раз за выбранный вами период (по умолчанию 15 минут) —
+ради самых новых продаж ваших собственных лотов; ничего никому не отправляется. Инструменты наборов карточек читают у
 Steam подробности ваших собственных значков (наборы карточек, ваши уровни и XP), а страницы значков публичного
 профиля — только когда вы просите уровни этого профиля. Крафт значков из наборов карточек — это изменение в вашем
 аккаунте: он отправляется в Steam (по одному крафту) только после того, как вы увидели план — игры, наборы и XP — и
@@ -1154,8 +1296,8 @@ Steam на трейд, не более 5 попыток в час (неудач�
 третий раз страницу Security & Devices (`store.steampowered.com/account/authorizeddevices`) для строк e-mail, телефона
 и Steam Guard (читается из открытой вкладки `store.steampowered.com`; пока такой нет, эти строки ждут); ваши
 отправленные трейды — собственными запросами фонового слежения за трейдами (его счётчики; его список отправленных —
-когда эти счётчики меняются, и не чаще раза в 5 минут, пока какой-то ваш отправленный трейд ждёт; если вкладка
-«Трейд-офферы» или её уведомление о принятых трейдах выключены, эти чтения списка делаются для этой проверки; для
+когда эти счётчики меняются, и не чаще раза в 5 минут, пока какой-то ваш отправленный трейд ждёт; если слежение
+за трейдами или его уведомление о принятых трейдах выключены, эти чтения списка делаются для этой проверки; для
 тревоги о таком трейде — одно чтение публичного профиля Steam его партнёра, а по признаку фишинга — и партнёра
 отменённого трейда, чтобы тревога показала никнейм); ваш собственный инвентарь с сервера Steam, чтобы сравнить с тем,
 что показывает страница инвентаря, — когда вы открываете свой инвентарь (по умолчанию не чаще раза в 6 часов; примерно
@@ -1205,7 +1347,7 @@ Dota 2, Steam; Rust, если ваш источник цен его оценив
 ### 5. Дополнительные сервисы
 Все дополнительные сторонние сервисы и сайты — под одним флажком (с 1.21.24, как и с 1.18.0 до 1.21.22; в 1.21.23 сайты для цен и картинок были без флажка и запрашивались у браузера кнопкой «Согласен», а сервисы, получающие Steam ID, включал собственный флажок): «Использовать дополнительные сторонние сервисы и сайты» на странице, показанной перед началом работы Smart Trader, и «Разрешить дополнительные сервисы и сайты» в параметрах расширения (тот же флажок).
 Под ним: источники цен (с 2026-10-09) marketdb.info, pricempire и публичные файлы цен маркетплейсов (Market.CSGO и его сайты TF2, Dota 2 и Rust, Waxpeer, LOOT.FARM, Lis-Skins), Telegram-канал KEYS.LAND и (с 1.21.23) картинки Unusual-эффектов TF2 с itempedia.tf, которые не получают ничего о вас или ваших предметах; три сайта репутации (backpack.tf, SteamTrades, CSGO-Rep), которые получают публичный SteamID64 партнёра по обмену, которого вы просматриваете; и (с 1.18.0) steamapis.com, который получает ваш собственный ключ и SteamID64 каждого инвентаря, загруженного через него.
-При первом запуске флажок пустой, и «Согласен с Лицензионным соглашением и уведомлением о данных» тогда принимает только соглашение и уведомление о данных: у браузера ничего не запрашивается, и ни один из этих сервисов не работает. С отмеченным флажком та же кнопка также одним запросом просит браузер разрешить все их сайты, и флажок считается отмеченным, только когда браузер держит каждый из них; если вы отклоните этот запрос, ваше согласие всё равно будет записано, а эти сервисы останутся выключенными, пока вы не отметите флажок в параметрах. Когда страница спрашивает снова после обновления, флажок отмечен так, как вы его оставили, пока браузер ещё разрешает каждый из этих сайтов.
+При первом запуске флажок пустой, и «Согласен с Лицензионным соглашением и уведомлением о данных» тогда принимает только соглашение и уведомление о данных: у браузера ничего не запрашивается, и ни один из этих сервисов не работает. С отмеченным флажком та же кнопка также одним запросом просит браузер разрешить все их сайты, и флажок считается отмеченным, только когда браузер держит каждый из них; если вы отклоните этот запрос, ваше согласие всё равно будет записано, а эти сервисы останутся выключенными, пока вы не отметите флажок в параметрах. Когда страница спрашивает снова после обновления, флажок отмечен так, как вы его оставили, пока браузер ещё разрешает каждый из этих сайтов или когда браузер не может этого сказать (тогда «Согласен» с флажком, оставленным как есть, сохраняет ваши сервисы такими, какими они были: ничего не запрашивается, не выключается и не возвращается); когда какой-то из этих сайтов уже не разрешён, флажок пустой, а строка под ним говорит, что раньше вы его отметили, — отметьте его снова, и та же кнопка попросит браузер разрешить их.
 Если его снять — на той странице, когда она спрашивает снова, или в параметрах, — выключаются все они, а доступ к их сайтам возвращается браузеру; забрать разрешение сайта можно также в собственных настройках доступа к сайтам для расширения в браузере или кнопкой «Удалить все данные Smart Trader».
 Пока флажок не отмечен, цены берутся только с Рынка Steam, без картинок Unusual-эффектов, без цен маркетплейсов, без резерва KEYS.LAND и без репутации партнёров с этих сайтов; настройки Smart Trader на Steam показывают красную табличку с кнопкой к параметрам, а его кнопка в шапке Steam мигает красным.
 Настройки Smart Trader по умолчанию используют цены marketdb.info и файл цен Waxpeer (заводской Пресет 1), резерв KEYS.LAND из Telegram (когда сервер keys.land не отвечает), картинки Unusual-эффектов TF2 с itempedia.tf и сайты репутации, поэтому отмеченный флажок сразу их запускает: репутация партнёров с backpack.tf (с его инструментами на страницах backpack.tf), SteamTrades (с вашими cookie steamtrades.com) и CSGO-Rep.
@@ -1229,7 +1371,7 @@ Trader, один раз переносится туда), он хранится 
 запросов, никогда в адресе и никогда на другой хост; он никогда не передаётся веб-страницам, в том числе страницам
 Steam, и не записывается в диагностический журнал. Сервер цен keys.land разрешён с самого начала (его хост устанавливается вместе с
 расширением), и Smart Trader обращается к нему только тогда, когда эти цены включены в настройках Smart Trader
-(KEYS.LAND → «Использовать цены KEYS.LAND», с 1.12.2 включено с самого начала; переключатель вкладки KEYS.LAND их
+(KEYS.LAND → «Использовать цены KEYS.LAND», с 1.12.2 включено с самого начала; переключатель цен KEYS.LAND их
 выключает; с 1.12.4 — единственный переключатель этих цен с любым источником цен, в том числе маркетплейсом), или —
 только за показателями обмена в Steam — когда источником цен выбран маркетплейс, а предметы, которые он не оценивает,
 оцениваются минус автоматическая комиссия вывода, или когда цены Рынка Steam или marketdb.info показываются как наличные
@@ -1258,7 +1400,7 @@ Steam, а фоновая часть расширения отправляет е
 
 | Сервис | Что отправляется | Когда |
 | --- | --- | --- |
-| Сервер цен keys.land (хост, указанный в разрешениях расширения) | только то, какая цена нужна: `GET …/kl/v1/market/series?item=key` (или `ticket`, `gems`) `&range=24h`; и показатели обмена ключей, билетов и самоцветов в Steam: `GET …/kl/v1/steam/convert` (без параметров). Ничего о вас или вашей учётной записи. | когда показываются цены ключей TF2, билетов или самоцветов (не чаще раза в минуту) — только когда цены KEYS.LAND включены в настройках Smart Trader (с 1.12.2 включено с самого начала; переключатель вкладки KEYS.LAND их выключает; с любым источником цен, в том числе маркетплейсом); показатели обмена — только когда источником цен выбран маркетплейс, а предметы, которые он не оценивает, оцениваются минус автоматическая комиссия вывода, или когда цены Рынка Steam или marketdb.info показываются как наличные (по умолчанию; всегда, пока KEYS.LAND включён) (не чаще раза в несколько минут); сам сервер разрешён с самого начала, в параметрах его можно выключить |
+| Сервер цен keys.land (хост, указанный в разрешениях расширения) | только то, какая цена нужна: `GET …/kl/v1/market/series?item=key` (или `ticket`, `gems`) `&range=24h`; и показатели обмена ключей, билетов и самоцветов в Steam: `GET …/kl/v1/steam/convert` (без параметров). Ничего о вас или вашей учётной записи. (С 1.22.0) Списки цен CS2, которые наш сервер собирает с cs2.sh (Рынок Steam и пять маркетплейсов: BUFF, Youpin, CSFloat, Skinport, C5Game): `GET …/v1/cs2sh/latest?sources=<источники>` отправляет только набор источников; ничего о вас или ваших предметах, никогда название предмета. Раз в сутки также идентификаторы предметов CS2 на маркетплейсах для ссылок в карточке предмета (`GET …/v1/cs2sh/ids`, без параметров): ничего о вас. | когда показываются цены ключей TF2, билетов или самоцветов (не чаще раза в минуту) — только когда цены KEYS.LAND включены в настройках Smart Trader (с 1.12.2 включено с самого начала; переключатель цен KEYS.LAND их выключает; с любым источником цен, в том числе маркетплейсом); показатели обмена — только когда источником цен выбран маркетплейс, а предметы, которые он не оценивает, оцениваются минус автоматическая комиссия вывода, или когда цены Рынка Steam или marketdb.info показываются как наличные (по умолчанию; всегда, пока KEYS.LAND включён) (не чаще раза в несколько минут); (с 1.22.0) список цен CS2: один список, хранится 15 минут, когда предмету CS2 нужна цена от члена cs2.sh вашего активного пресета («Рынок Steam (cs2.sh)», «Маркетплейсы (cs2.sh)») или включены цены на маркетплейсах вкладки CS2 и страница показывает предметы CS2; файл идентификаторов раз в сутки при том же условии (хранится 24 часа); сам сервер разрешён с самого начала, в параметрах его можно выключить |
 | Telegram (`t.me`), канал KEYS.LAND | только запрос публичной страницы канала: `GET https://t.me/s/keysland`. Ничего о вас или ваших предметах, без cookie. Со страницы берутся только цены ключей, билетов и самоцветов его последнего пригодного поста с ценами (более раннего на странице, когда более новые не удалось прочитать или их цены далеки от последних известных) и время поста. | только когда отмечен флажок дополнительных сторонних сервисов и сайтов и браузер разрешает `t.me` (с 1.21.24, как и с 1.18.0 до 1.21.22; в 1.21.23 — одно разрешение на сайты для цен и картинок, запрос, когда вы соглашались с уведомлением о данных; в 1.17.0 — собственный флажок), цены KEYS.LAND и настройка Telegram включены, а сервер цен keys.land не ответил; не чаще раза в 30 минут (раз в минуту, пока цен KEYS.LAND нет совсем) |
 | backpack.tf (`backpack.tf`) | публичный SteamID64 профиля или партнёра по обмену, которого вы просматриваете: `GET https://backpack.tf/api/IGetUsers/v3?steamid=<SteamID64>` | когда вы открываете профиль, предложение обмена или историю обменов |
 | SteamTrades (`www.steamtrades.com`) | тот же SteamID64: `GET https://www.steamtrades.com/user/<SteamID64>`, с вашими собственными cookie steamtrades.com (с 2026-10-07; нужно, чтобы пройти его проверку на ботов) | так же |
@@ -1271,7 +1413,7 @@ Steam, а фоновая часть расширения отправляет е
 Результаты хранятся на вашем компьютере несколько часов (раздел 2); списки источников цен — только как названия
 предметов с ценами и количествами. Сервер цен keys.land держит автор Smart Trader;
 он только пересылает публичные данные о ценах с KEYS.LAND — независимого сервиса, данные которого используются с
-разрешения его владельца. Сам сервер недолго хранит только обычные журналы (запрошенный адрес и время) и ничего о вашем
+разрешения его владельца; с 1.22.0 он также передаёт списки цен CS2, которые наш собственный сервер собирает с cs2.sh (независимый сервис цен, данные которого используются по его условиям; ключ к нему есть только на нашем сервере, никогда в расширении), а расширение отправляет ему только набор нужных источников, ничего о вас или ваших предметах. Сам сервер недолго хранит только обычные журналы (запрошенный адрес и время) и ничего о вашем
 аккаунте. backpack.tf, SteamTrades, CSGO-Rep, marketdb.info, pricempire, steamapis.com, маркетплейсы и Telegram применяют собственные условия
 и политики конфиденциальности, опубликованные на их сайтах.
 
@@ -1305,6 +1447,8 @@ IP-адрес, браузер, время, сайт Steam как источни�
 идентификатор предмета и контрольное число. Никаких cookie, сессии Steam, токена или трейд-ссылки с ней не уходит;
 вкладка открывается без реферера. Просмотрщик видит ваш IP-адрес, браузер и время и может передать ссылку своим
 собственным сервисам (например, своему 3D-рендереру); действуют его собственные условия и политика конфиденциальности. Панель «Подробности» расшифровывает ссылку на вашем компьютере и ничего не отправляет.
+
+cs2.sh (с 1.22.0; вкладка CS2 → cs2.sh, по умолчанию включено) открывается только по вашему клику, как обычная ссылка: кнопка «проверить на cs2.sh» в инвентаре (своём или чужом, пока показан его инвентарь CS2) и в окне трейда (пока показана вкладка CS2 инвентаря партнёра) открывает страницу этого инвентаря на cs2.sh в новой вкладке с публичным SteamID64 аккаунта в адресе (вашим, владельца профиля или партнёра по трейду); «Открыть на cs2.sh» под «View in Community Market» в меню предмета открывает страницу предмета там, с рыночным названием предмета в адресе. До клика ничего не отправляется; сам Smart Trader не делает ни одного запроса к cs2.sh (списки цен CS2 из раздела 5 приходят с нашего собственного сервера). Вкладка открывается без opener и реферера, без cookie, сессии Steam или токена; cs2.sh видит ваш IP-адрес, браузер и время, и действуют его собственные условия и политика конфиденциальности.
 
 Ссылки на другие сайты (например, SteamDB, backpack.tf, SteamTrades, Steam Card Exchange) — обычные ссылки: эти
 сайты ничего не получают, пока вы не откроете ссылку.
@@ -1352,7 +1496,8 @@ store.steampowered.com: через открытую вкладку Steam или,
 параметров говорит, где это сделано; сайт, на котором завершить не удалось, назван, и повторное нажатие кнопки с
 открытой страницей этого сайта это завершает. После этого, пока вы не очистите данные этих сайтов в браузере,
 остаются несколько мелких переключателей в `localStorage` сайтов Steam (стили светлой темы, размытие для стримов,
-счётчик кеша инструментов продажи) и два cookie настроек Steam из раздела 2 (`bMarketOptOut`, `birthtime`). Удаление
+счётчик кеша инструментов продажи, вкладки настроек, в которых вы оставили развёрнутым блок «Дополнительные
+настройки») и два cookie настроек Steam из раздела 2 (`bMarketOptOut`, `birthtime`). Удаление
 расширения тоже удаляет его собственное хранилище, но до хранилища сайтов Steam не достаёт: чтобы удалить и кеши там,
 сначала нажмите «Удалить все данные Smart Trader» (или очистите данные steamcommunity.com и store.steampowered.com в
 браузере). Кеши устаревают и сокращаются сами. Флажок дополнительных сторонних сервисов и сайтов (раздел 5) ничего не
@@ -1385,7 +1530,7 @@ Steam только чтобы сравнить с тем, что показыв�
 читает с вашими cookie Steam только чтобы сравнить предметы, которые показывает каждый трейд, с собственной записью Steam
 о нём, из этого не сохраняется ничего, кроме номеров трейдов в тревоге (раздел 2) (те же данные, которые уже читают
 слежение за трейдами и автопринятие); цены KEYS.LAND включены с самого начала, а marketdb.info — источник цен Smart
-Trader по умолчанию (раздел 5): это обновление один раз включает KEYS.LAND для каждой установки (переключатель вкладки
+Trader по умолчанию (раздел 5): это обновление один раз включает KEYS.LAND для каждой установки (переключатель цен
 KEYS.LAND выключает его снова), по умолчанию показывает цены Рынка Steam и marketdb.info как наличные (показатели обмена
 в Steam с сервера keys.land — тот же запрос, что и раньше, теперь и для этого) и делает marketdb.info источником по
 умолчанию (к нему по-прежнему обращаются только после того, как вы включите его здесь; до того цены берутся с Рынка
@@ -1502,6 +1647,32 @@ Smart Trader» до этой версии не доставало. Измене�
 шкала флоата версии 1.21.24 только показывают собственные данные Steam о предмете со страницы: никакого нового вида
 данных, получателя или чтения. В той же версии согласие в расширении снова один флажок (раздел 5, решение владельца от 2026-10-25): все дополнительные сторонние сервисы и сайты — и сайты для цен и картинок, и сервисы, получающие Steam ID, — под одним флажком «Использовать дополнительные сторонние сервисы и сайты», пустым при первом запуске; «Согласен с Лицензионным соглашением и уведомлением о данных» тогда принимает только соглашение и уведомление, а с отмеченным флажком одним запросом просит браузер разрешить все их сайты; когда уведомление показывается снова, флажок отмечен так, как вы его оставили, пока браузер ещё разрешает каждый из них, а если его снять там или в параметрах, все они останавливаются, а доступ к их сайтам возвращается браузеру. Пока он не отмечен, настройки Smart Trader на Steam показывают красную табличку, а его кнопка в шапке Steam мигает красным. Никакого нового вида данных или получателя. Лицензионное соглашение, показанное вместе с ним, переиздано как версия 2026-10-25: его раздел 8 описывает этот один флажок; его раздел об автоматизации не изменился, поэтому согласие на автоматизацию, данное по версии 2026-10-17 или 2026-10-24, сохраняется. Поскольку эти слова исправляют то, что эта политика вам говорила, дата вступления в
 силу меняется, и расширение снова показывает уведомление о данных (его версия 16).
+2026-10-31 (1.22.0) — новое чтение с вашей сессией Steam и
+исправления того, что эта политика вам говорила. Новое чтение (раздел 4): пока уведомления о продажах включены
+(«Уведомления» → «Продажи на Рынке Steam», выключено, пока вы их не включите), одна вкладка браузера читает вашу
+собственную историю Рынка Steam с вашей сессией Steam раз за выбранный вами период — ради самых новых продаж ваших
+собственных лотов; ничего никому не отправляется. Раздел 2 называет, что для них хранится: одна запись для аккаунта
+этого браузера под его SteamID — самые новые продажи, о которых ещё не уведомлено (рыночное название предмета, сколько
+заплатил покупатель и сколько получили вы с id валюты, время продажи — для 12 самых новых; более старые только как их
+количество и общие суммы по каждой валюте), время самого нового события вашей истории Рынка с id продаж этой секунды и
+время последнего чтения и последнего уведомления; ничего о покупателе; «Удалить все данные Smart Trader» удаляет её.
+Исправления (раздел 2): записи на вашем компьютере, которых эта политика раньше не называла, — трейды на удержании,
+которых ждёт подсчёт предметов в шапке Steam (id трейд-оффера, конец удержания, инвентари, в которые придут его
+предметы; не больше 50, каждый до суток после конца удержания), со временем самого нового трейда, увиденного на ваших
+страницах истории трейдов или трейд-офферов; темп Quick accept (миллисекунды на предмет в его чистых принятиях 20
+предметов и больше, последние 10 для каждой игры, только числа); строка диагностики на странице параметров расширения о
+вашем ответе на уведомление о данных (его версия и время, состояние дополнительных сервисов, id расширения) со
+счётчиками, которые хранятся только в памяти браузера; и, в `localStorage` сайтов Steam, в каких вкладках настроек вы
+оставили развёрнутым блок «Дополнительные настройки» (раздел 8: это значение остаётся после «Удалить все данные Smart
+Trader»). Раздел 5 говорит, каким возвращается флажок дополнительных сервисов, когда уведомление показывается снова:
+отмеченным так, как вы его оставили, пока браузер ещё разрешает каждый из их сайтов или не может этого сказать, и
+пустым со строкой под ним, когда какой-то из них уже не разрешён; раздел 8 Лицензионного соглашения говорит то же самое
+(его версия 2026-10-25 остаётся, поэтому согласие на автоматизацию тоже сохраняется). Раздел 1 теперь точно говорит,
+что хранится до вашего согласия: только служебное состояние установки, без личных данных. Разделы 2 и 5 также называют с 1.22.0 списки цен CS2, которые наш сервер собирает с cs2.sh (Рынок Steam и пять маркетплейсов) и передаёт через уже указанный сервер цен keys.land (отправляется только набор источников, ничего о вас или ваших предметах; один список хранится 15 минут), и cs2.sh среди сайтов, которые открывает только ваш клик (SteamID64 инвентаря или название предмета в адресе, до клика ничего). Никакого нового получателя или
+разрешения; ваш выбор насчёт дополнительных сервисов, переключатель ретранслятора keys.land и ваше согласие на
+автоматизацию остаются такими, какими были. Поскольку это новое чтение с вашей сессией Steam, а эти слова исправляют
+то, что эта политика вам говорила, дата вступления в силу меняется, и расширение снова показывает уведомление о данных —
+один раз (его версия 17).
 
 ### 10. Контакт
 ggggggdev@gmail.com
