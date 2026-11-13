@@ -45,10 +45,11 @@ For Google Chrome 116 or newer. The Chrome Web Store keeps the extension up to d
 ## Selling and the Steam Market
 
 - **Selling buttons** in your inventory: "Sell everything", "Sell spare copies", "Sell selected", "Sell all trading cards", "Sell all cases" and "Sell on Steam's page".
-- **"Review first"** shows every price, what you receive and the sums before anything is listed. "Sell as prices come in" lists each item as soon as its price is read, after a warning.
+- **"Review first"** shows every price, what you receive, how many of each item to sell and the sums before anything is listed. "Sell as prices come in" lists each item as soon as its price is read, after a warning.
 - **Quick sell** in the item card: buttons with the lowest listing, one step under it, the highest buy order or your own price.
 - **Your limits:** minimum and maximum prices per kind of item, and a warning in Steam's sell dialog when a price is far under the current lowest one.
 - An item whose listing still waits for your confirmation in the Steam Mobile app or by e-mail is never listed again.
+- **Within Steam's limits:** listings and removals go no faster than your delay (2 to 3 seconds by default); at about 250 listings awaiting your confirmation a sale or a relist pauses with Continue and Stop; listings that would go over Steam's wallet limit are left out. The summary at the end says why each item was left out, with a link to the setting that stopped it.
 - **My listings:** search, sort, remove, "Remove all", "Relist selected", "Relist overpriced" and a price check of every listing.
 - **Order book** on an item's market page: any of the market's currencies (converted by Steam), "Seller gets" after the fees for each listing, "You get" for each buy order, the step from the price before, more rows or the whole book.
 - **Fear & Greed index** beside the listings of items with enough data: a gauge, a 30-day line and its six components. It is worked out on your computer and is only an indicator: nothing is bought or sold because of it.
@@ -67,7 +68,7 @@ For Google Chrome 116 or newer. The Chrome Web Store keeps the extension up to d
 - **Trade window summary** below the item picker: the tiles first (7 a row by default, foldable), then the list with prices, a copy button and your choice of order. A click on a row shows that item in the inventory above.
 - **"In trade" marks** on your items that already sit in another active offer, and the add tools pass them over.
 - When Steam does not allow trade-protected items and other items in one offer, a note at the tile says why, and the add tools leave such items out and say how many.
-- **Partner reputation, partner history and partner check buttons:** see [Security](#security-and-anti-scam-protections).
+- **Partner reputation, partner history and partner check buttons:** see [Security](#security-and-anti-scam-protections). The partner check buttons are off by default: turn them on in Settings → Profiles & reputation → Reputation.
 - **Auto accept of gifts** (offers in which you give nothing): off by default, and it cannot be turned on without your explicit consent to automation ("I allow automation and accept the risk"). It never accepts an offer in which you give items or one with a trade hold, and it never confirms anything in the mobile authenticator. The "AA" switch in the header turns it off at once. Steam's rules restrict automation, and you are responsible for what is accepted on your account.
 
 ## Trade history
@@ -78,7 +79,7 @@ For Google Chrome 116 or newer. The Chrome Web Store keeps the extension up to d
 - **Selected trades panel**, the same as on the offers pages.
 - **Times in your time zone**, 12 or 24 hours, with Steam's original time in the tooltip.
 - **The order of the items** in each trade (as grouped, by count, by price or by name).
-- **Partner check buttons** beside each trade (see [Security](#security-and-anti-scam-protections)).
+- **Partner check buttons** beside each trade (off by default: Settings → Profiles & reputation → Reputation; see [Security](#security-and-anti-scam-protections)).
 
 ## Prices and price providers
 
@@ -127,6 +128,7 @@ For Google Chrome 116 or newer. The Chrome Web Store keeps the extension up to d
 ## Dota 2
 
 - **Stacks and prices** for Dota 2 items by your price preset (the Steam Market and, for items it has no listing for, a marketplace's price list).
+- **Item marks on the tiles:** quality, gems, Unusual effects and styles; the Dota-2 tab of the settings explains every mark. Optionally the value of the gems inside is added to the price, and "check at steamprice.com" opens the inventory on steamprice.com in a new tab, only on your click.
 - **Big inventories:** rows per page and paced loads for large Dota 2 inventories.
 - **Trade locks** on the tiles, the order of the stacks and the selling tools work as for the other games.
 - Dota 2 items count in the inventory value next to your wallet balance.
@@ -144,9 +146,9 @@ The phishing and scam protection is experimental. Every check has its own switch
 - **Trade windows** checked for a covered confirm button, another partner or wrong item counts, and **look-alike friends** in one-to-one web chats (group chats are never read).
 - **Auto-cancel** of offers sent from your account but not from this browser: "Off" by default, and it needs your consent to automation. It cancels at most 5 offers an hour and never one you sent from this browser.
 - **Partner history** on every offer and in the trade window ("7 trades · last 3 days ago"), counted on your computer and kept as one-way codes; "Forget partner history" deletes it.
-- **Partner reputation** from community reputation sites (under the one consent box), and **partner check buttons** that open the partner's page on a reputation site in a new tab when you click one.
+- **Partner reputation** from community reputation sites (under the one consent box), and **partner check buttons** (off by default) that open the partner's page on a reputation site in a new tab when you click one.
 - **"Signed out" alert** when Steam signs you out in this browser.
-- Alerts come as a red banner on every open Steam page and as a desktop notification with sound. Only one-way fingerprints are kept, and nothing goes anywhere but Steam.
+- Alerts come as a red banner on every open Steam page and as a desktop notification with sound. Only one-way fingerprints are kept, and nothing goes anywhere but Steam (and to your own Telegram bot, if you turn it on).
 - Smart Trader does not replace Steam Guard: confirmations in the Steam Mobile app or by e-mail stay yours.
 
 ## Notifications
@@ -154,6 +156,7 @@ The phishing and scam protection is experimental. Every check has its own switch
 - **Desktop notifications** with a short sound: a new incoming offer (who sent it, what you get and give), a sent offer accepted, the results of Quick accept and auto accept, a trade that is completed or fails.
 - **Sales on the Steam Market** (off by default): what sold and for how much, once per period you choose (15 minutes by default), and a big sale told at once.
 - **Security alerts** and the "signed out" warning, each by its own switch.
+- **Your own Telegram bot** (off by default): the notifications you tick go to a bot you make with https://t.me/Botfather; its token stays in the extension (options page).
 - **The bell and the speaker** in Steam's header turn the notifications and their sound on and off in every tab.
 - **"Clear all"** in Steam's notifications popup marks every Steam notification read.
 - The "Incoming Offers" button blinks with the number of waiting offers.
@@ -186,7 +189,7 @@ The phishing and scam protection is experimental. Every check has its own switch
 - **What stays on your computer:** your settings, item marks, saved trade links, history summaries, price caches and your API keys (kept by the extension's background part, out of every web page's reach). "Delete all Smart Trader data" on the options page removes them.
 - **What goes to Steam:** the requests Steam's own pages make, with your own session.
 - **Key prices:** the KEYS.LAND prices and the CS2 price lists come from the author's price service. Only which price list is wanted is sent, nothing about you or your items. A switch turns the key prices off.
-- **One consent box for every optional service:** "Use the optional third-party services and sites" on the first page (empty until you tick it), the same box as "Allow the optional services and sites" on the options page. Under it: the external price database marketdb.info, pricempire (with your own key), the public price lists of marketplaces, the public page of the KEYS.LAND Telegram channel (read when the key prices cannot be had otherwise), the pictures of TF2 Unusual effects, the reputation sites backpack.tf, SteamTrades and CSGO-Rep (they receive a trade partner's public SteamID64) and steamapis.com (with your own key, for big inventories). While the box is empty, none of them is asked, and prices come from the Steam Market and the author's price service. Unticking it gives their site access back to the browser.
+- **One consent box for every optional service:** "Use the optional third-party services and sites" on the first page (empty until you tick it), the same box as "Allow the optional services and sites" on the options page. Under it: the external price database marketdb.info, pricempire (with your own key), the public price lists of marketplaces, the public page of the KEYS.LAND Telegram channel (read when the key prices cannot be had otherwise), the pictures of TF2 Unusual effects, the reputation sites backpack.tf, SteamTrades and CSGO-Rep (they receive a trade partner's public SteamID64) and steamapis.com (with your own key, for big inventories). While the box is empty, none of them is asked, and prices come from the Steam Market and the author's price service. Unticking it gives their site access back to the browser. Your own Telegram bot is not under this box: it has its own switch (the Telegram card on the extension's options page).
 - **Links only on your click:** the 3D viewer, cs2.sh, Pricempire and the partner check buttons open a new tab only when you click them; nothing is sent to these sites before.
 - **The diagnostic log** is off by default and never leaves your computer unless you send the file yourself.
 - **No remote code:** all of the extension's code is in its package.

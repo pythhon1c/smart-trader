@@ -1,0 +1,46 @@
+Smart Trader
+Copyright (c) 2026 the author of Smart Trader (github.com/pythhon1c). All rights reserved.
+
+1. What this notice covers
+
+"The own code" means everything in Smart Trader that its author wrote: the source files of this repository, the
+built script and the built browser extension, their texts, translations, pictures and documents, except the
+third-party components named in THIRD-PARTY-NOTICES.md. In the built script every module of the own code stands
+under a line "Smart Trader: <file>".
+
+2. No licence beyond the License Agreement
+
+The own code is not open source. No right to copy, change, merge, publish, distribute, sublicense or sell the own
+code, or to make works derived from it, is granted to anyone, with one exception: the Smart Trader License Agreement
+(LICENSE-AGREEMENT.md) grants a personal, non-exclusive, non-transferable, revocable licence to install and use
+Smart Trader. Nothing else may be done with the own code without the author's written permission. Being able to
+read the code (in a browser, in an installed copy or in this repository) grants no such permission.
+
+3. Third-party components
+
+Versions of Smart Trader up to and including 1.23.0 contained components of other authors under the MIT License and
+the Apache License 2.0. None of their code is in Smart Trader after 1.23.0: clean-room rewrites replaced it. They are
+listed with their copyright lines, the versions that held them and their full licence texts in
+THIRD-PARTY-NOTICES.md. In those versions each of them stays under its own licence, and nothing in this notice limits
+the rights those licences give or adds restrictions they do not allow.
+Smart Trader also contains short wordings from Team Fortress 2's own localization files by Valve Corporation (item and
+attribute names in English, Ukrainian and Russian, and the names of Unusual effects: src/data/tf2-words.js,
+src/data/tf2-particles.js), used only to recognise the texts Steam's own pages show. They are Valve's; this notice
+grants nothing for them, and THIRD-PARTY-NOTICES.md names them with their sources.
+
+4. Older versions
+
+Versions up to and including 1.8.1 contained code under the GNU General Public License (see
+THIRD-PARTY-NOTICES.md). This notice does not change the terms that apply to those versions.
+
+5. No warranty
+
+The own code is provided "as is", without warranty of any kind, express or implied, including the warranties of
+merchantability, fitness for a particular purpose and non-infringement. To the extent the law allows, the author is
+not liable for any claim, damages or other liability arising from the own code or from its use. The License
+Agreement says the same in more detail for the people who use Smart Trader.
+
+6. Names
+
+"Smart Trader" (and "Steam Cool Trader", the userscript's name before 1.22.0) are the names of this project. Steam is a trademark of Valve Corporation;
+Smart Trader is not affiliated with or endorsed by Valve Corporation.
