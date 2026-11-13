@@ -6,7 +6,7 @@ Smart Trader is a free browser extension that adds trading tools to Steam's own 
 
 ### **[Install Smart Trader from the Chrome Web Store](https://chromewebstore.google.com/detail/smart-trader-trading-tool/cikfmbllbfiplfpllhbomapngmcedglo)**
 
-For Google Chrome 116 or newer. The Chrome Web Store keeps the extension up to date. This page describes the version in the store, 1.22.19. What changed in each store version: [history of changes](CHANGELOG.en.md).
+For Google Chrome 116 or newer. The Chrome Web Store keeps the extension up to date. This page describes the version in the store, 1.23.9. What changed in each store version: [history of changes](CHANGELOG.en.md).
 
 **First start.** After installation Smart Trader shows its data notice and License Agreement. Nothing runs on Steam's pages until you press "I agree to the License Agreement and the data notice". The settings open from the "Smart Trader" button in Steam's header, and every feature has its own switch there.
 
