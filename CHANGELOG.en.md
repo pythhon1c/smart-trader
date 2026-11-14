@@ -4,6 +4,20 @@
 
 The list follows the versions published on the [Chrome Web Store](https://chromewebstore.google.com/detail/smart-trader-trading-tool/cikfmbllbfiplfpllhbomapngmcedglo): each store version holds the notes of every version released since the previous store version, the newest first.
 
+## 1.24.0 (Chrome Web Store, 2026-11-14)
+
+### 1.24.0 (2026-11-13)
+
+- Trade window: a backpack.tf link that puts the partner's item into the offer (for_item) or loads the partner's TF2 inventory for a buy listing now works on a new offer only; an offer already sent always shows exactly the items it holds.
+- Trade window: a big offer whose items are not all loaded yet no longer slows the page down while prices are asked.
+- On an item's market page, relisting your own listings no longer takes one listing's quantity for another (a listing of 5 relisted as 1); a listing whose item the page does not show is not relisted there and says to relist it from My listings.
+- The relist of My listings reads your inventory page by page at the inventory's own pace and stops once the items it needs are found, so a big inventory no longer leaves listings off the market; Steam's "too many requests" now pauses it at once.
+- Before it takes the first listing off, the relist checks that your inventory can be read; when Steam does not answer, nothing is taken off and the listings stay on the market for Retry.
+- Telegram bot: a message whose partner or item name ends in a word such as "Secret" or "Token" before a colon is no longer dropped silently with the rest of its batch; the bot token, your API keys and values shaped like Steam tokens are still never sent.
+- Texts corrected: the uk / ru notes of the cs2.sh prices, a fallback note in ru, the help of the sign-out warning, the age of a KEYS.LAND Telegram post (10 days) on the options page, and in the privacy policy the order of the factory Preset 1 and how long the cs2.sh list is kept (60 minutes).
+- The header shows the pending part of your wallet balance on the same line as the balance.
+- The "check at cs2.sh" button is hidden until cs2.sh supports inventory links; an item's "View in cs2.sh" links stay.
+
 ## 1.23.9 (Chrome Web Store, 2026-11-13)
 
 ### 1.23.9 (2026-11-13)

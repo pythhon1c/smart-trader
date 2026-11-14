@@ -6,7 +6,7 @@ Smart Trader is a free browser extension that adds trading tools to Steam's own 
 
 ### **[Install Smart Trader from the Chrome Web Store](https://chromewebstore.google.com/detail/smart-trader-trading-tool/cikfmbllbfiplfpllhbomapngmcedglo)**
 
-For Google Chrome 116 or newer. The Chrome Web Store keeps the extension up to date. This page describes the version in the store, 1.23.9. What changed in each store version: [history of changes](CHANGELOG.en.md).
+For Google Chrome 116 or newer. The Chrome Web Store keeps the extension up to date. This page describes the version in the store, 1.24.0. What changed in each store version: [history of changes](CHANGELOG.en.md).
 
 **First start.** After installation Smart Trader shows its data notice and License Agreement. Nothing runs on Steam's pages until you press "I agree to the License Agreement and the data notice". The settings open from the "Smart Trader" button in Steam's header, and every feature has its own switch there.
 
@@ -113,7 +113,7 @@ For Google Chrome 116 or newer. The Chrome Web Store keeps the extension up to d
 - **"3D View"** opens an external 3D viewer page in a Smart Trader window (or, if you choose, in a new tab), only when you click it and with only the item's inspect link. Details shows the exact float, pattern seed and phase, decoded on your computer.
 - **Prices on marketplaces (cs2.sh):** the Steam Market and five marketplaces, each with its lowest listing and highest buy order, in the item card, the trade window's hover card and an item's listing page.
 - **Doppler phases:** a Doppler or Gamma Doppler is priced at its own phase's price wherever the phase is known.
-- **"check at cs2.sh", "View in cs2.sh" and "View in Pricempire"** open the inventory or the item on that site in a new tab, only on your click.
+- **"View in cs2.sh" and "View in Pricempire"** open the item on that site in a new tab, only on your click.
 - Trade-protected items carry a shield (🛡) and can still go into an offer.
 - Everything about CS2 is on the CS2 tab of the settings.
 
